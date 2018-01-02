@@ -1,3 +1,5 @@
+#! /usr/bin/python3
+
 def data(d):
     for i in dir(d):
         if not i.startswith('_'):
