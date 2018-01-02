@@ -1,0 +1,17 @@
+def data(d):
+    for i in dir(d):
+        if not i.startswith('_'):
+            print(i)    
+    else:
+      print()
+      
+#print('Integer Method:')
+#data(int)
+print('String Method:')
+data(str)
+print('List Method:')
+data(list)
+print('Set Method:')
+data(set)
+print('Dictionary Method:')
+data(dict)
