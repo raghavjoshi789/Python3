@@ -1,0 +1,12 @@
+
+#!/usr/bin/env python3
+
+city1 = "Chennai"
+city2 = "chennvami"
+l1 = list(city1)
+l2 = list(city2)
+
+comp = (set(l2)-set(l1))
+mismatch = list(comp)
+
+print('This character', mismatch, 'has been changed in city2')
