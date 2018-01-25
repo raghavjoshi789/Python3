@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+
+def count_line(f):
+  with open(f) as fo:
+    for e,i in enumerate(fo,1):
+      pass
+  print(' Number of line in file',repr(f) + ':','\n',e)
+
+count_line('line.txt')
