@@ -1,0 +1,22 @@
+report = {
+          'John': 98.5,
+          'Alfred' : 78.0,
+          'David': 45.6,
+          'Karan': 89.97,
+          'Michele':  60.89,
+              }
+### if you try to use the inbuilt 'min' or 'max' directly to dictionary, they will only process the keys,not the values.            
+print(min(report)) 
+
+### if you try to use the values instead.
+print(min(report.values()))
+
+### Process key with values using zip
+print(min(zip(report.values(), report.keys())))
+print(max(zip(report.values(), report.keys())))
+
+### sorted
+print(sorted(zip(report.values(), report.keys())))
+for i,j in sorted(zip(report.values(), report.keys())):
+  print('{}\t{}'.format(j,i))
+  
