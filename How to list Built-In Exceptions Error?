@@ -1,0 +1,14 @@
+
+import re
+colllectError = []
+for i in dir(__builtins__):
+    error = re.match(r'^[A-Z]',i)
+    if error:
+        colllectError.append(i)
+
+c1 = colllectError[0::3]
+c2 = colllectError[1::3]
+c3 = colllectError[2::3]
+
+for a,b,c in zip(c1,c2,c3):
+    print('{:<25} {:<20} {:<20}'.format(a,b,c))
