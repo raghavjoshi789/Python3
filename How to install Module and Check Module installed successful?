@@ -1,0 +1,6 @@
+
+Install:
+$ sudo pip3 install pillow
+
+Check:
+python -c 'import PIL;print(PIL)'
