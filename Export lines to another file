@@ -1,0 +1,7 @@
+
+f1 = open('line.txt', 'r')
+fr = f1.readlines()
+f2 = open('new','w')
+f2.write(fr[2]) ### Here, I export 3rd line
+f1.close()
+f2.close() 
