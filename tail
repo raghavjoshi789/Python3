@@ -1,0 +1,9 @@
+
+def tail(n1):
+  f1 = open('test.txt', 'r')
+  f1r = f1.readlines()
+  print(''.join(f1r[:-n1-1:-1][::-1]))
+  f1.close()
+
+line = int(input('Enter Line number:'))
+tail(line)  
