@@ -1,7 +1,14 @@
 
-f1 = open('line.txt', 'r')
-fr = f1.readlines()
-f2 = open('new','w')
-f2.write(fr[2]) ### Here, I export 3rd line
-f1.close()
-f2.close() 
+def split_line(n1,n2):
+  f1 = open('test.txt', 'r')
+  f2 = open('splitwrite.txt','w')
+  f1r = f1.readlines()
+  fetch = ''.join(f1r[n1:n2])
+  f2.write(fetch)
+  f1.close()
+  f2.close() 
+
+split_line(1,5) ### This is fetch 4 line
+#split_line(2,3) ### This is fetch single line
+
+
