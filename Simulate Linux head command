@@ -1,0 +1,8 @@
+def head(n1):
+  f1 = open('test.txt', 'r')
+  f1r = f1.readlines()
+  print(''.join(f1r[0:n1]))
+  f1.close()
+
+last_line = int(input('Enter Line number:'))
+head(last_line)  
