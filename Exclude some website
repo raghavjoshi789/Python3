@@ -1,0 +1,9 @@
+import re
+
+with open('site.txt') as f:
+  
+  for i in f:
+    matched_site = re.search(r'https?://(?!www.(facebook|youtube)).*',i,re.X )
+    if matched_site:
+      print(matched_site.group())
+    
