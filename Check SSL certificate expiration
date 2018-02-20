@@ -1,0 +1,50 @@
+import sys
+import OpenSSL
+import ssl
+import datetime
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+class SslCheck:
+    def compose_mail(self,alert_text):
+        # Compose From,To,Subject header and Body
+        fromaddr = 'from address'
+        toaddr = 'to address'
+        msg = MIMEMultipart()
+        msg['From'] = fromaddr
+        msg['To'] = toaddr
+        msg['Subject'] = 'SSL Expire Alert'
+        body = alert_text
+        msg.attach(MIMEText(body,'plain'))
+        # Connect Your SMTP server.Here i use gmail smtp server.
+        server = smtplib.SMTP('smtp.gmail.com',587)
+        server.starttls()
+        server.login(fromaddr,'letrxmeddozur')
+        text = msg.as_string()
+        server.sendmail(fromaddr,toaddr,text)
+        server.quit()
+        
+    def ssl_expire(self,cert): 
+        load_cert = OpenSSL.crypto.load_certificate(OpenSSL.crypto.FILETYPE_PEM,cert)
+        expire_date = datetime.datetime.strptime(load_cert.get_notAfter().decode(),'%Y%m%d%H%M%SZ')
+        today = datetime.datetime.today()
+        delta = expire_date - today
+        alert_text = 'Your SSL certificate will expire {} days'.format(delta.days)
+        if delta.days <= 90:
+            SslCheck.compose_mail(self,alert_text)
+        else:
+            print(sys.exc_info()[1])
+    
+    #  ssl certificate expiration check Using website pem  
+    def web_pem(self,site,port):
+        cert=ssl.get_server_certificate((site,port))
+        SslCheck.ssl_expire(self,cert)
+    
+    #  ssl certificate expiration check Using host pem  
+    def host_pem(self,cert):
+        SslCheck.ssl_expire(self,cert)
+        
+sslvalid = SslCheck()
+sslvalid.web_pem('www.google.com', 443)
+#sslvalid.host_pem('/home/joe/Program/Python/Micheal/cert/cilogon-globus.pem')
