@@ -1,0 +1,14 @@
+import csv 
+from datetime import datetime
+
+f = open('/home/joe/sales.csv')
+reader = csv.reader(f)
+row1 = next(reader) 
+print(row1[0], row1[1], row1[5]) 
+for i in reader:
+    order_date = datetime.strptime(i[5], '%m/%d/%Y')
+    compare_date = datetime.strptime('1/1/2014', '%m/%d/%Y')
+    if i[0] == 'Asia' and order_date < compare_date:
+        print(i[0],i[1],i[5])
+f.close()
+            
