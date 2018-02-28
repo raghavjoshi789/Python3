@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 import paramiko
 
 def remote_connection(run_command):
@@ -20,3 +19,5 @@ def run(ssh):
     while command != 'q':      
         command = input('Enter Linux Command: ')
         ssh_print(ssh, command)
+    else:
+        print('Your are exited.')
