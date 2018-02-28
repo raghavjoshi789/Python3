@@ -15,7 +15,7 @@ def ssh_print(ssh, command):
 
 @remote_connection
 def run(ssh):
-    command = input('Enter Linux Command: ')
+    command = ''
     while command != 'q':      
         command = input('Enter Linux Command: ')
         ssh_print(ssh, command)
