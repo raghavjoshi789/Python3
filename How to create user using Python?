@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+import sys
+import subprocess as sp
+
+args = dict(stdin=sp.PIPE, stdout=sp.PIPE, stderr=sp.PIPE)
+if len(sys.argv) == 3 :
+    get_user = sys.argv[1]
+    get_pass = sys.argv[2].encode() + b'\n'
+else:
+    print('Enter User and Password properly.')
+homdir = '/home/' + get_user
+usr = sp.call(['useradd', '-m', '-d', homdir, '-s','/bin/bash', get_user])
+passwd = sp.Popen(['passwd', get_pass],**args)
+for i in range(2):
+    passwd.stdin.write(get_pass)
