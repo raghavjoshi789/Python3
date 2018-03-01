@@ -10,13 +10,13 @@ command = 'python3 -c "import sys; exec(sys.stdin.read())" < /home/joe/cert.py'
 def run_script():
     for host in hostname:
         ssh = Popen(["ssh", "-t", "root@" + host, command], **args)
-        result = ssh.stdout.read().splitlines()
+        result = ssh.stdout.read().decode().splitlines()
         if result == []:
             error = ssh.stderr.read().splitlines()
             print(sys.stderr, "ERROR: %s" % error)
         else:
             for i in result:
-                print(i.decode())
+                print(i)
                 
 def main():
     run_script()
