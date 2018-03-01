@@ -11,7 +11,7 @@ def run_script():
         ssh = Popen(["ssh", "-t", "root@" + host, command], **args)
         result = ssh.stdout.read().decode().splitlines()
         if result == []:
-            error = ssh.stderr.read().splitlines()
+            error = ssh.stderr.read().decode().splitlines()
             print(sys.stderr, "ERROR: %s" % error)
         else:
             for i in result:
