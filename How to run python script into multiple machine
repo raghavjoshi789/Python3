@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+
+from subprocess import Popen,PIPE
+import sys
+
+args = dict(stdin=PIPE, stdout=PIPE, stderr=PIPE)
+hostname = ['seelan']
+command = 'python3 -c "import sys; exec(sys.stdin.read())" < /home/joe/cert.py'
+
+def run_script():
+    for host in hostname:
+        ssh = Popen(["ssh", "-t", "root@" + host, command], **args)
+        result = ssh.stdout.read().splitlines()
+        if result == []:
+            error = ssh.stderr.read().splitlines()
+            print(sys.stderr, "ERROR: %s" % error)
+        else:
+            for i in result:
+                print(i.decode())
+
+def main():
+    run_script()
+    
+if __name__ == "__main__":
+    main()
