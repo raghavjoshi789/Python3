@@ -17,7 +17,7 @@ def run_script():
         else:
             for i in result:
                 print(i.decode())
-
+                
 def main():
     run_script()
     
