@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+from subprocess import Popen, PIPE, check_output
+
+arg = dict(stdin=PIPE, stdout=PIPE, stderr=PIPE)
+user_list = check_output(['getent', 'passwd'])
+user_list = user_list.decode().splitlines()
+user = []
+normal_user = []
+passwd = '123'.encode() + b'\n'
+for i in (user_list):
+    user += [i.split(':')]
+for i in user:
+    if int(i[2]) >= 1000 and i[-1] == '/bin/bash':
+        normal_user += [i[0]]
+for user1 in normal_user:
+    out = Popen(['sudo', 'getent', 'shadow', user1], **arg)
+    out.stdin.write(passwd)
+    locked_user = out.stdout.read().decode().split(':')[0:2]
+    if locked_user[1].startswith('!'): 
+    	print(repr(locked_user[0]), 'user locked. Contact your admin.')
