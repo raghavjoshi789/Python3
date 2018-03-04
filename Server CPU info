@@ -1,0 +1,25 @@
+#!/us/bin/env python3
+
+def cpuinfo(my_cpu):
+    with open('/proc/cpuinfo') as f:
+        r = f.read().splitlines()
+        cpu = [ i.replace('\t', '') for i in r if i.startswith('model name')]
+        my_cpu()
+        
+@cpuinfo
+# List CPU
+def list_cpu():
+    for j in cpu:
+        print(j)
+
+@cpuinfo
+# How many cpu in your server?
+def no_cpu():
+    print('This machine have {} cpus'.format(len(cpu)))
+
+@cpuinfo
+# Total CPU Frequencies
+def total_cpu():
+    total = [ float(cpu[i][-7:-3]) for i in range(len(cpu))]
+    print('This machine total CPU clock frequencies {}GHz'.format(sum(total)))
+       
