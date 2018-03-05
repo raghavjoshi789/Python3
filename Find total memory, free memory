@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+from collections import OrderedDict
+
+f = open('/proc/meminfo')
+r = f.read().splitlines()
+meminfo = OrderedDict()
+
+for i in r:
+    meminfo[i.split(':')[0]] = i.split(':')[1]
+
+print('Total Memory {}'.format(meminfo['MemTotal']))
+print('Free Memory {}'.format(meminfo['MemFree']))
