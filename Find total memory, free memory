@@ -4,9 +4,12 @@ from collections import OrderedDict
 f = open('/proc/meminfo')
 r = f.read().splitlines()
 meminfo = OrderedDict()
-
 for i in r:
     meminfo[i.split(':')[0]] = i.split(':')[1]
 
-print('Total Memory {}'.format(meminfo['MemTotal']))
-print('Free Memory {}'.format(meminfo['MemFree']))
+memt = int(meminfo['MemTotal'].rstrip('kB'))/1024/1024
+memf = int(meminfo['MemFree'].rstrip('kB'))/1024
+memc = int(meminfo['Cached'].rstrip('kB'))/1024
+memb = int(meminfo['Buffers'].rstrip('kB'))/1024
+print('Total Memory: {:2.1f} GB'.format(memt) )
+print('Free Memory: {:4.1f} GB'.format(int(memf + memc + memb)/1024))
