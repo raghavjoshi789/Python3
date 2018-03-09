@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+import os
+
+process = []
+for i in os.listdir('/proc'):
+    if i.isdigit():
+        process += [i]
+print('Currently {} process running.'.format(len(process)))
