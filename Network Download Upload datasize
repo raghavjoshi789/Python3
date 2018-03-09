@@ -1,3 +1,4 @@
+Example:1
 #!/usr/bin/python3
 
 f = open('/proc/net/dev')
@@ -7,6 +8,22 @@ for data in r[2:]:
     data = data.split(':')
     if data[0].strip() != 'lo':
         net_data[data[0]] = [float(data[1].split()[0])/(1024*1024), 
-                             float(data[1].split()[8])/(1024*1024)]
+                            float(data[1].split()[8])/(1024*1024)]
+
 for i in net_data.items():
     print('{}: Downloaded {:1.2f} MiB,  Uploaded:{:1.2f} MiB'.format(i[0],i[1][0],i[1][1]))
+    
+Example:2
+#!/usr/bin/python3
+from collections import namedtuple
+
+f = open('/proc/net/dev')
+r = f.read().splitlines()
+device_data = {}
+data = namedtuple('data', 'rx tx')
+for line in r[2:]:
+    if line.split(':')[0].strip() != 'lo':
+        device_data[line.split(':')[0]] = data(float(line.split()[1])/(1024*1024), 
+                                               float(line.split()[9])/(1024*1024))
+for keys in device_data.keys():
+    print('{}: Down{:10.2f}MiB | Up {:5.2f}MiB'.format(keys,device_data[keys].rx, device_data[keys].tx))
