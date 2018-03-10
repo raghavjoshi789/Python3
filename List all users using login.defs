@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+import pwd
+
+with open('/etc/login.defs') as f:
+    for i in f:
+        if i.startswith('UID_MIN'):
+            uid_min = int(i.split()[1])
+        if i.startswith('UID_MAX'):
+            uid_max = int(i.split()[1])
+print('{:>5} {:>10} {:>12} {:>10}'.format('USER', 'UID', 'HOME DIR', 'SHELL'))
+users = pwd.getpwall()
+for user in users:
+    if user.pw_uid >= uid_min and user.pw_uid <= uid_max:
+        print('{:>5} {:>10} {:>12} {:>10}'.format(user.pw_name, user.pw_uid, user.pw_dir, user.pw_shell))
