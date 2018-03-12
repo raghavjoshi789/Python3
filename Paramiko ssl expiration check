@@ -1,0 +1,10 @@
+import paramiko
+
+path = '/home/joe/Program/Python/Vijay/ca.crt'
+ssh = paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+ssh.connect('seelan', username='root', password='123')
+stdin, stdout, stderr = ssh.exec_command('openssl x509 -subject -startdate -noout -enddate -in %s' %path)
+print('This is output =',stdout.readlines())
+print('This is error =',stderr.readlines())
+ssh.close()
