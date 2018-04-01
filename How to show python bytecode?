@@ -1,0 +1,6 @@
+import dis
+
+def code(x):
+    for i in range(x):
+        print(i)
+dis.dis(code)
