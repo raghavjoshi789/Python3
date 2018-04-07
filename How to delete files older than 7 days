@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+
+import os
+import glob
+import datetime
+
+today = datetime.datetime.today()
+print("These files are older than 7 days:")
+for i in glob.glob('/home/joe/Downloads/*'):
+    t = os.stat(i)[8]
+    filetime = datetime.datetime.fromtimestamp(t) - today    
+    if filetime.days <= -7:
+        print( i, filetime.days)
+        os.remove(i)
