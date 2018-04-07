@@ -1,0 +1,4 @@
+#!/usr/bin/python3
+
+ls = ['2.0G', '1.1G', '56M', '5.0G', '211G', '4.8G', '13G', '7.2G']
+print(sorted(ls, key=lambda x: x[-1])[::-1])
