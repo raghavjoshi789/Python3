@@ -1,0 +1,18 @@
+#Method:1
+import re
+
+st = ''' <r2:Id>abc1236382geke</r2:ld>
+         <r2:Id>737838ghrjrjgeke</r2:ld>
+         '''
+for line in st.split():
+    print(re.sub(r'<r2:Id>|</r2:ld>', '', line))
+    
+#Method:2
+import re
+
+compose = re.compile(r'<r2:Id>|</r2:ld>')
+st = ''' <r2:Id>abc1236382geke</r2:ld>
+         <r2:Id>737838ghrjrjgeke</r2:ld>
+         '''
+for line in st.split():
+    print(compose.sub( '', line))
