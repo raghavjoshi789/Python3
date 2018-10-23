@@ -1,0 +1,4 @@
+#!/usr/bin/python3
+import os.path
+
+print(round(os.path.getsize('/home/joe/Downloads/the.mp4')/1024/1024),'MB')
