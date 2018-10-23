@@ -1,0 +1,12 @@
+#List pid,process name?
+import os
+
+collect_pid = []
+for i in os.listdir():
+    if i.isdigit():
+        collect_pid += [i]
+
+for pid in collect_pid:
+    pname = open('/proc/'+pid+'/status').readlines()[0]
+    print(pid,pname.strip().lstrip('Name:').lstrip())
+    
