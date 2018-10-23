@@ -1,6 +1,7 @@
 #List pid,process name?
 import os
 
+os.chdir('/proc/')
 collect_pid = []
 for i in os.listdir():
     if i.isdigit():
