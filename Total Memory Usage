@@ -1,0 +1,43 @@
+
+#!/usr/bin/python3
+
+import os
+
+os.chdir('/proc/')
+collect_pid = []
+for i in os.listdir():
+  if i.isdigit():
+    collect_pid += [i]
+    pname_pid = []
+    for pid in collect_pid:
+      try:
+        fopen = open('/proc/'+str(pid)+'/status')
+        fread = fopen.readlines()[0].strip().lstrip('Name:').lstrip()
+        pname_pid += [[int(pid),fread]]
+        fopen.close()
+        pname_dict = dict(pname_pid)
+      except (PermissionError, FileNotFoundError):
+        pass
+
+pss = []
+private_page = []
+for pid_no in sorted(pname_dict.keys()):
+  try:
+    osmaps = open('/proc/'+str(pid_no)+'/smaps')    
+    for text in osmaps.readlines():
+      text = text.rstrip()        
+      if text.startswith('Pss'):
+        pss += [ int(text.lstrip('Pss:').lstrip().rstrip('kB ')) ]          
+      if text.startswith('Private'):
+        private_page += [ int(text.lstrip ('Private_Clean:').lstrip('Private_Dirty:').lstrip().rstrip('kB ')) ]                         
+  except (PermissionError, FileNotFoundError):
+    pass                                                                                                                                
+                                                                                        
+Pss = round(sum(pss)/1024)
+Private = round(sum(private_page)/1024)
+Shared = Pss - Private
+Memory_Usage = Private + Shared
+print('PSS:', Pss,'MiB')
+print('Private Memory:', Private,'MiB')
+print('Shared Memory:', Shared,'MiB')
+print('Total Memory Usage:', Memory_Usage,'MiB')
