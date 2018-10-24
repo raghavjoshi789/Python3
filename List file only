@@ -1,0 +1,6 @@
+
+import glob
+
+for i in glob.glob("/home/joe/Temp/test/*"):
+    if "." in i:
+        print(i)
