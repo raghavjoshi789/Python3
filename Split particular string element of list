@@ -1,0 +1,6 @@
+
+with open('/proc/cpuinfo') as fo:
+    cnt = [ i.strip().replace('\t','') for i in fo.readlines() if i.startswith('model name')]
+    print(cnt)
+    split_cnt =cnt[1].split()
+    print(split_cnt)
