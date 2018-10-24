@@ -1,7 +1,0 @@
-#!/us/bin/env python3
-
-with open('/proc/cpuinfo') as f:
-    r = f.read().splitlines()
-    cpu = [ i.replace('\t', '') for i in r if i.startswith('model name')]
-    for j in cpu:
-        print(j)    
