@@ -14,10 +14,10 @@ for i in os.listdir():
         fread = fopen.readlines()[0].strip().lstrip('Name:').lstrip()
         pname_pid += [[int(pid),fread]]
         fopen.close()
-        pname_dict = dict(pname_pid)
       except (PermissionError, FileNotFoundError):
         pass
 
+pname_dict = dict(pname_pid)
 pss = []
 private_page = []
 for pid_no in sorted(pname_dict.keys()):
