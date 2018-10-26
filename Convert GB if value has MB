@@ -1,0 +1,6 @@
+
+# if value has MB.
+value = 4500
+
+if v > 1024:
+    print('{:6.2f} G'.format(value/1024))
