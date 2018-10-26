@@ -1,0 +1,29 @@
+
+import re
+
+mem = ['2.0G', '1.1G', '56M', '5.0G', '211G', '4.8G', '13G', '7.2G']
+
+K = []
+M = []
+G = []
+for i in mem:    
+    if re.search(r'K$', i):
+        if '.' in i:
+            K += [ float(i.rstrip('K')) ]
+        else:
+            K += [ int(i.rstrip('K')) ]
+    if re.search(r'M$', i):
+        if '.' in i:
+            M += [ float(i.rstrip('M')) ]
+        else:
+            M += [ int(i.rstrip('M')) ]
+    if re.search(r'G$', i):
+        if '.' in i:
+            G += [ float(i.rstrip('G')) ]
+        else:
+            G += [ int(i.rstrip('G')) ]
+
+gi = [ str(x) + 'G' for x in sorted(G) ]
+mi = [ str(x) + 'M' for x in sorted(M) ]
+ki = [ str(x) + 'K' for x in sorted(K) ]
+print(gi + mi + ki)
