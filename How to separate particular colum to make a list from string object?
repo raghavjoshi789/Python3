@@ -21,3 +21,22 @@ print(str.split())
 
 Output:
 ['Shared_Clean:', '424', 'kB', 'Shared_Dirty:', '0', 'kB', 'Private_Clean:', '0', 'kB', 'Private_Dirty:', '0', 'kB']
+
+# Separate three column
+str = ''' Shared_Clean:    424 kB
+          Shared_Dirty:     0 kB
+          Private_Clean:    0 kB
+          Private_Dirty:    0 kB '''
+size = []
+n1 = str.split()[::3]
+n2 = str.split()[1::3]
+n3 = str.split()[2::3]
+total = zip(n1,n2,n3)
+for i in total:
+    print(i)
+Output:
+('Shared_Clean:', '424', 'kB')
+('Shared_Dirty:', '0', 'kB')
+('Private_Clean:', '0', 'kB')
+('Private_Dirty:', '0', 'kB')
+
