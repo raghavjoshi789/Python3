@@ -1,0 +1,5 @@
+import os
+import getpass
+
+if os.getuid() != 0:
+    print('User {} Not Root User.'.format(getpass.getuser()))
