@@ -1,0 +1,23 @@
+
+# separate 2nd column
+
+str = ''' Shared_Clean:    424 kB
+          Shared_Dirty:     0 kB
+          Private_Clean:    0 kB
+          Private_Dirty:    0 kB '''
+n2 = str.split()[1::3]
+print(n2)
+
+Output:
+['424', '0', '0', '0']
+
+# Create list 
+str = ''' Shared_Clean:    424 kB
+          Shared_Dirty:     0 kB
+          Private_Clean:    0 kB
+          Private_Dirty:    0 kB '''
+
+print(str.split())
+
+Output:
+['Shared_Clean:', '424', 'kB', 'Shared_Dirty:', '0', 'kB', 'Private_Clean:', '0', 'kB', 'Private_Dirty:', '0', 'kB']
