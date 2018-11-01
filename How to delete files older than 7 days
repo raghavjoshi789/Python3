@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 
 import os
+import os.path
 import glob
-import datetime
+from datetime import datetime
 
-today = datetime.datetime.today()
-print("These files are older than 7 days:")
-for i in glob.glob('/home/joe/Downloads/*'):
-    t = os.stat(i)[8]
-    filetime = datetime.datetime.fromtimestamp(t) - today    
+today = datetime.today()
+print('Below files are delete.')
+for i in glob.glob('/home/joe/Temp/*'):
+    mtime = datetime.fromtimestamp(os.stat(i)[8])
+    filetime = mtime - today
     if filetime.days <= -7:
-        print( i, filetime.days)
+        print('{:<20} {}'.format(os.path.basename(i),filetime.days))
         os.remove(i)
