@@ -1,0 +1,10 @@
+
+import os
+import os.path
+import glob
+from datetime import datetime
+
+print("{:<20} {}".format("Filename","Date"))
+for i in glob.glob('/home/joe/Temp/*'):
+    mtime = datetime.fromtimestamp(os.stat(i)[8])
+    print("{:<20} {}".format(os.path.basename(i), mtime))
