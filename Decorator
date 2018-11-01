@@ -1,0 +1,20 @@
+
+# Example 1: Create simple decorator
+def create_decorate(dec):
+    print('hi!')
+    dec()
+    print('hi! Decorate Created.')
+@create_decorate
+def my_function():
+    print('Now Decorate Create')
+    
+# Example 2: Pass arguments in decorator
+import platform
+
+def dec(pass_arg):
+    print('OS Name:')
+    osname = platform.system()
+    pass_arg(osname)
+@dec
+def fun(osname):
+    print(osname)
