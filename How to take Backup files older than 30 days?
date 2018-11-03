@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+
+import os
+import os.path
+import glob
+from datetime import datetime
+import shutil
+
+today = datetime.today()
+print('Below files are moved.')
+for i in glob.glob('/home/joe/Temp/*'):
+    mtime = datetime.fromtimestamp(os.stat(i)[8])
+    filetime = mtime - today
+    if filetime.days <= -30:
+        print('{:<20} older {} days'.format(os.path.basename(i),abs(filetime.days)))
+        shutil.move(i,'/home/joe/Backup/')
