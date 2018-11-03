@@ -1,5 +1,4 @@
 
-import re
 
 with open('/proc/mdstat') as opn:
     raid = opn.readlines()[0].split()[-1].replace('[','').replace(']','')
