@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+
+import os 
+
+dr = '/sys/class/scsi_host/'
+for i in os.listdir(dr):
+    with open (dr+i+'/scan', 'w') as opn:
+        opn.write('- - -')
+else:
+    print('Succuessfuly scan all scsi bus.')
