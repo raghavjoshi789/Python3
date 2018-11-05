@@ -1,9 +1,0 @@
-#!/usr/bin/python
-
-with open('/etc/passwd') as f:
-    file = f.read().splitlines()
-    for i in file:
-        spt = i.split(':')
-        if '/bin/bash' in spt and int(spt[2]) >= 1000:
-            print(spt[0])
-            
