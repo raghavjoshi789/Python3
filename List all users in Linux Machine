@@ -8,7 +8,9 @@ with open('/etc/login.defs') as f:
         if i.startswith('UID_MAX'):
             uid_max = int(i.split()[1])
 print('{:>5} {:>10} {:>12} {:>10}'.format('USER', 'UID', 'HOME DIR', 'SHELL'))
+print('*'*44)
 users = pwd.getpwall()
 for user in users:
     if user.pw_uid >= uid_min and user.pw_uid <= uid_max:
-        print('{:>5} {:>10} {:>12} {:>10}'.format(user.pw_name, user.pw_uid, user.pw_dir, user.pw_shell))
+        print('{:>4} {:>12} {:>12} {:>13}'.format(user[0],user[2],user[5],user[6]))
+#        print('{:>5} {:>10} {:>12} {:>10}'.format(user.pw_name, user.pw_uid, user.pw_dir, user.pw_shell))
