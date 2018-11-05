@@ -1,0 +1,7 @@
+
+import os
+
+dr = '/home/joe/Program/Python'
+for pdir,subdir,filename in os.walk(dr):
+    for file in filename:
+        print(os.path.join(pdir,file))
