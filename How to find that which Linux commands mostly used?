@@ -1,0 +1,14 @@
+
+comm ={}
+with open('/home/joe/.bash_history') as opn:
+    for i in opn.readlines(): 
+        fcomm = ''.join(i.split()[:1])
+        if fcomm not in comm:
+            comm[fcomm] = 1
+        else:
+            comm[fcomm] += 1
+command = sorted(comm.items(), key=lambda t: t[1], reverse=True)
+print('{:<15} {}'.format('Command','Number-of-time-Used'))
+print('*'*35)
+for c,n in command[:10]:
+    print('{:<15} {:>10}'.format(c,n))
