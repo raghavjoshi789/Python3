@@ -1,0 +1,24 @@
+# Program :1 
+
+with open('/home/joe/Temp/file.txt') as opn:
+    line = {}
+    for i in opn.readlines():
+        fline = i.strip()
+        if fline not in line:
+            line[fline] = 1
+        else:
+            line[fline] += 1
+for i,j in line.items():
+    if j > 1:
+        print(repr(i),'line duplicated',j - 1,'times')
+        
+# Program : 2
+with open('/home/joe/Temp/file.txt') as opn:
+    line = {}
+    for i in opn.readlines():
+        fline = i.strip()
+        line[fline] = line.get(fline, 0) + 1   # value if the key is not found and value is specified as 0.
+for i,j in line.items():
+    if j > 1:
+        print(repr(i),'line duplicated',j - 1,'times')
+    
