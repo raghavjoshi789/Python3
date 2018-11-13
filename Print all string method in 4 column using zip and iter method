@@ -1,0 +1,7 @@
+
+st = []
+for i in dir(str):
+    if not i.startswith('_'):
+        st += [i]
+for a,b,c,d in zip(*[iter(st)] *4):
+    print('{:20} {:20} {:20} {:20}'.format(a,b,c,d))
