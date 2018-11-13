@@ -1,3 +1,4 @@
+# Collect sectors(/sys/block/sda/size) and Multiply with sector size
 
 import os
 import glob
