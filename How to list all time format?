@@ -1,0 +1,6 @@
+
+import subprocess as sp
+
+dte = sp.check_output(['date','--help']).decode().splitlines()
+for i in dte[29:72]:
+    print(i)
