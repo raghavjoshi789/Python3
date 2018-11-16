@@ -8,21 +8,11 @@ question['Maharastra Capital:'] = ['Mumbai', 'Chennai', 'Delhi' ]
 
 def inp():
     return int(input('Enter Number:'))
+a = [1, 2, 1]
     
-for e,i in enumerate(question.items(), 1):
+for i,j in zip(question.items(), a):
     print('{}\n{}'.format(i[0],'\t'.join(str(i)+'. '+ k for i,k in enumerate(i[1], 1))))
-    if e == 1:
-        if 1 == inp():
-            print("Your Answer Correct\n")
-        else:
-            print("Your Answer Wrong\n")
-    if e == 2:
-        if 2 == inp():
-            print("Your Answer Correct\n")
-        else:
-            print("Your Answer Wrong\n")
-    if e == 3:
-        if 1 == inp():
-            print("Your Answer Correct\n")
-        else:
-            print("Your Answer Wrong\n")
+    if j == inp():
+        print("Your Answer Correct\n")
+    else:
+        print("Your Answer Wrong\n")
