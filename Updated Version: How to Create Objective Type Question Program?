@@ -1,0 +1,21 @@
+# Note: You could noe see answer in this program. Actually answer exists in ans.txt file.
+
+from collections import OrderedDict
+
+with open('ans.txt') as opn:
+    ans = [ int(i) for i in opn.read().split()]
+    
+question = OrderedDict()
+question['USA Capital:'] = ['Washington', 'Banglore', 'Delhi']
+question['United Kingtom Capital:'] = ['Chennai', 'London', 'Paris']
+question['France Capital:'] = ['Paris', 'London', 'Delhi' ]
+
+def inp():
+    return int(input('Enter Number:'))
+    
+for i,j in zip(question.items(), ans):
+    print('{}\n{}'.format(i[0],'\t'.join(str(i)+'. '+ k for i,k in enumerate(i[1], 1))))
+    if j == inp():
+        print("Your Answer Correct\n")
+    else:
+        print("Your Answer Wrong\n")     
