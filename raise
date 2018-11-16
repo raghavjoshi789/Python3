@@ -1,0 +1,7 @@
+
+try:
+    inp = input('Enter Number:')
+    if not inp.isdigit():
+        raise ValueError("This is not number. Enter number.")
+except ValueError as ve:
+    print(ve)
