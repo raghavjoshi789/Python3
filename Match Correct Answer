@@ -1,0 +1,12 @@
+
+print('Before Matched:')
+print('*'*15)
+dt = {'USA': 'Delhi', 'UK': 'Berlin', 'Germany':  'Washington', 'India':  'London'}
+for a,b in dt.items():
+     print('{:8} {:8}'.format(a,b))
+print('')
+print('After Matched:')
+print('*'*14)
+dt['USA'],dt['UK'],dt['Germany'],dt['India'] = dt['Germany'],dt['India'],dt['UK'],dt['USA']
+for i,j in dt.items():
+    print('{:8} {:8}'.format(i,j))
