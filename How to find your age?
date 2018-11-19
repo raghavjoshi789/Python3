@@ -1,0 +1,8 @@
+
+from datetime import datetime
+
+birth_date = '04-11-1987'
+today = datetime.today()
+birth_date_strip = datetime.strptime(birth_date,'%d-%m-%Y')
+delta = birth_date_strip - today
+print('Age:{:3.0f}'.format((-delta.days)/365))
