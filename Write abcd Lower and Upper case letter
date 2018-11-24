@@ -1,0 +1,5 @@
+
+import string
+
+print(' '.join(string.ascii_lowercase))
+print(' '.join(string.ascii_uppercase))
