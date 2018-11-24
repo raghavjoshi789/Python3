@@ -1,5 +1,13 @@
 
+# Method: 1
 import string
 
 print(' '.join(string.ascii_lowercase))
 print(' '.join(string.ascii_uppercase))
+
+# Method: 2
+from string import ascii_letters as asl
+
+l, u = asl[:26], asl[26:]
+print(' '.join(l))
+print(' '.join(u))
