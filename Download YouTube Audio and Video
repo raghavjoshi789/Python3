@@ -1,0 +1,14 @@
+
+import pafy
+import re
+
+url = 'https://youtu.be/k7ebhme9zV4?list=PLCOq7C_nEIDS39DejH5RT-d4CMflXKCmJ'
+if '?list':
+    url = url.partition('?list')[0]
+fetch = re.search(r'.{11}$', url).group()
+s = pafy.new(fetch)
+for i, j in enumerate(s.allstreams,1):
+    print('{:4}{:8} {:6} {:10} {}'.format(str(i)+'.',j.mediatype, j.extension, j.quality, j.bitrate))
+inp = int(input('\nEnter Stream Number: '))
+d = s.allstreams[inp-1]
+d.download()
