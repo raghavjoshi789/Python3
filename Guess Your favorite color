@@ -1,0 +1,5 @@
+
+from random import randint
+
+color = ['Red', 'Rose', 'Black', 'Blue', 'Cyan', 'Gold', 'yellow']
+color[randint(0,len(color) -1)]
