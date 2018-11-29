@@ -1,0 +1,3 @@
+lst = [ 3, 'Hello', 4, 34, '45']
+remove_string = (lambda x: isinstance(x, int))
+[*filter(remove_string, lst)]
