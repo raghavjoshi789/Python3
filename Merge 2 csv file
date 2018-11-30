@@ -1,0 +1,5 @@
+f1 = open('file1.csv')
+f2 = open('file2.csv')
+f1r = csv.reader(f1)
+f2r = csv.reader(f2)
+[*f1r] + [*f2r]
