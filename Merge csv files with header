@@ -1,0 +1,7 @@
+with open('file1.csv') as f1:
+    f1r = list(csv.reader(f1))
+with open('file2.csv') as f2:
+    f2r = list(csv.reader(f2))
+
+for i in range(len(f1r)):
+    print(f1r[i] + f2r[i])
