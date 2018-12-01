@@ -1,0 +1,17 @@
+# Example: 1    
+lam = lambda x: len(x)
+lam('Manavalan')
+
+Out: 
+9
+
+# Example: 2
+(lambda x: len(x))('Chennai') 
+
+Out:
+7
+# EExample: 3 --> lambda with list comprehension
+(lambda x: [chr(i)*x for i in range(65,70)])(3)
+
+Out:
+['AAA', 'BBB', 'CCC', 'DDD', 'EEE']
