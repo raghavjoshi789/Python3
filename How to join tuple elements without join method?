@@ -1,0 +1,8 @@
+
+import platform as plt
+
+# Before Joining
+print(plt.dist())
+
+# After joining using *unpack
+print(*(plt.dist()))
