@@ -1,0 +1,16 @@
+
+# Method: 1
+lines = ''' Linux  is a family of free and open-source software operating systems 
+            built around the Linux kernel. Typically, Linux is packaged in a form 
+            known as a Linux distribution for both desktop and server use. 
+            '''
+max(set(lines.split()), key = lines.split().count)
+
+# Method: 2
+from collections import Counter
+
+lines = ''' Linux  is a family of free and open-source software operating systems 
+            built around the Linux kernel. Typically, Linux is packaged in a form 
+            known as a Linux distribution for both desktop and server use. 
+        '''
+sorted(Counter(lines.split()).items(), key = lambda x: x[1])[-1][0]
