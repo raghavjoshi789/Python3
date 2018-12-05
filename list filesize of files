@@ -1,0 +1,6 @@
+from os.path import getsize,basename
+import glob
+
+folder = '/home/mana/Must Study/Python/*'
+size = [basename(i)+'- '+str(round(getsize(i)/1024/1024,1))+' MB' for i in glob.glob(folder)]
+size
