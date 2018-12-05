@@ -1,7 +1,0 @@
-from os.path import getsize,basename
-import glob
-
-folder = '/home/mana/Must Study/Python/*'
-file = filter(lambda i: getsize(i)/1024/1024 > 10, glob.glob(folder)) 
-for j in file:
-    print('{} - {:.0f} MB'.format(basename(j),getsize(j)/1024/1024))
