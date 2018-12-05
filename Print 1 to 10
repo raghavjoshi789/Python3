@@ -1,0 +1,8 @@
+
+print(*range(1,11))
+
+[*range(1,11)]
+
+(lambda *x: x)(*range(1,11))
+
+list(range(1,11))
