@@ -1,0 +1,8 @@
+import re
+
+lines = '''The Sangam literature of the Tamil language reveals that, 
+            between 200 BCE and 200 CE, the southern peninsula was being ruled by 
+            the Cheras, the Cholas, and the Pandyas, dynasties that traded 
+            extensively with the Roman Empire and with West and South-East Asia.
+        '''
+[lines.split()[i:5+i] for i in range(0,len(lines.split()),5)]
