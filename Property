@@ -1,0 +1,18 @@
+# How to modify private data using Property Decorator?
+
+class MyClass:
+    def __init__(self):
+        self.__data = 5
+        
+    @property
+    def get_data(self):
+        return self.__data
+    
+    @get_data.setter
+    def set_data(self, x): # Setter method
+        self.__data = x
+        
+obj = MyClass()
+print(obj.get_data) # return old value
+obj.set_data = 10 # Now, data modified using setter method
+print(obj.get_data) # return new vlaue
