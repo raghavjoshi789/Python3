@@ -1,0 +1,15 @@
+class MyClass:
+    def __init__(self):
+        self.__data = 5
+        
+    def get_data(self):
+        return self.__data
+    
+    def set_data(self, x): # Setter method
+        self.__data = x
+        
+obj = MyClass()
+obj.__data = 10
+print(obj.get_data()) # return old value
+obj.set_data(10) # Now, data modified using setter method
+obj.get_data() # return new vlaue
