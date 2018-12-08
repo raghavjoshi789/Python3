@@ -1,0 +1,7 @@
+
+from subprocess import check_output as cmd
+
+output = [i for i in cmd(['df', '-h']).decode().splitlines()]
+dev = [i.split()[-2:] for i in output if i.startswith('/dev/sd')]
+result = [i for i in dev  if int(i[0].strip('%')) > 50] 
+print('{!r} consumed above {!r}'.format(result[0][1], result[0][0]))
