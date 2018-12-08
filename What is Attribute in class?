@@ -1,0 +1,11 @@
+
+# Variable and Method of class technically called Attribute.
+
+class Parent:
+    name = 'Siva'  # Variable 
+    
+    def get_name(self):  # Method
+        return name
+    
+obj = Parent()
+dir(obj)[-2:]  # This statement list Attributes.
