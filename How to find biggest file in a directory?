@@ -1,3 +1,17 @@
+# using Tuple
+
+from os.path import basename,getsize
+from glob import glob
+
+d = '/home/mana/Must Study/Python/*'
+files = [(basename(i), getsize(i)) for i in glob(d)]
+final = sorted(files, key = lambda x: x[1])[-1]
+print('{} - {:.0f} MB'.format(final[0],final[1]/1048576))
+
+*****************************************************************
+
+# Using Dictionary
+
 from os.path import basename,getsize
 from glob import glob
 
