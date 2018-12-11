@@ -1,9 +1,10 @@
 from subprocess import check_output as cmd
 command = 'ps -A --sort pmem -o pid,comm,pmem'
 out = cmd(command.split()).decode().splitlines()
-header = out[0]
 mem_usage = [i.split() for i in out[2:]][-11:]
-print('Top 10 Memory consumer:')
+print('Top 10 Memory Consumer:')
 print('*'*30)
+print('{:7} {:18} {}'.format('PID','COMMAND','USAGE%'))
+print('-'*33)
 for j in mem_usage:
     print('{:7} {:18} {}'.format(*j))
