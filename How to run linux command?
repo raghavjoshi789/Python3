@@ -1,0 +1,5 @@
+
+from subprocess import check_output as cmd
+command = 'ps -A --sort pmem -o pid,comm,pmem'
+out = cmd(command.split()).decode().splitlines()
+out
