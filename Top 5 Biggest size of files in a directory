@@ -1,0 +1,7 @@
+from pathlib import Path
+
+p = Path('/home/mana/Must Study/Python')
+t_data = [(i.name, i.stat().st_size) for i in p.iterdir()]
+s_data = sorted(t_data, key = lambda j: j[1], reverse = True)[:5]
+for x,y in s_data:
+    print('{} - {:.0f}MB'.format(x,y/1024/1024))
