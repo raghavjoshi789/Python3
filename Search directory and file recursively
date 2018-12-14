@@ -1,0 +1,5 @@
+def dir_search(my_dir):
+    d = Path('/home/mana/Must Study')
+    return [x.name for x in d.glob('**/'+my_dir) if x.name == my_dir]
+
+dir_search('12A_Tense.pdf')
