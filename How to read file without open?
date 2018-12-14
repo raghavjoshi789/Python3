@@ -1,0 +1,5 @@
+from pathlib import Path
+
+p = Path('/home/mana/number.txt')
+contents = p.read_text().splitlines()
+contents
