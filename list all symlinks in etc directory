@@ -1,0 +1,2 @@
+d = Path('/etc')
+[i for i in d.glob('**/*') if i.is_symlink()]
