@@ -1,0 +1,8 @@
+from pathlib import Path
+
+p1 = Path('/dev/disk/by-uuid')
+uid = [(i.resolve(),i.parts[-1]) for i in p1.iterdir()]
+print('{} {:>13}'.format('Device-Name','UUID'))
+print('*'*26)
+for j,k in sorted(uid):
+    print('{:20} {}'.format(str(j),k))
