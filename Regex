@@ -1,0 +1,18 @@
+
+Python or and group:
+How many "cat" and "rat" word repated? How many "at" word repeated?
+
+Fetch
+st = 'cat beaten rat by bat. But rat esacped becuase rat was running. So cat was wiating '
+lst = re.findall(r'(?:c|r)at|at',st)
+
+Output:
+['cat', 'at', 'rat', 'at', 'rat', 'rat', 'cat', 'at']
+
+Counting
+from collections import Counter
+lst = re.findall(r'(?:c|r)at|at',st)
+Counter(lst)
+
+Output:
+Counter({'cat': 2, 'at': 3, 'rat': 3})
