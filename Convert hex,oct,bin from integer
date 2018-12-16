@@ -1,0 +1,25 @@
+How to convert hexadecimal from integer?
+print('{:X}'.format(90))
+format(90, 'X')
+
+Out:
+5A
+How to convert octadecimal from integer?
+print('{:o}'.format(90))
+format(90, 'o')
+
+Out:
+132
+How to convert binary from integer?
+print('{:b}'.format(90))
+format(90, 'b')
+
+Out:
+1011010
+
+
+How to padded with zero?
+print('{:04X}'.format(90))
+
+Out:
+005A
