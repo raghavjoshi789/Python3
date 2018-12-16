@@ -1,0 +1,13 @@
+# Method: 1
+from datetime import timedelta
+
+with open('/proc/uptime') as f:
+    uptime = str(timedelta(seconds = int(f.read().split('.')[0])))
+print(uptime)
+
+# Method: 2
+from pathlib import Path
+from datetime import timedelta
+
+sec = Path('/proc/uptime').read_text().split('.')[0]
+print(timedelta(seconds = int(sec)))
