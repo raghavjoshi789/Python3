@@ -1,0 +1,5 @@
+from time import ctime
+from pathlib import Path
+
+p = Path('/home/mana/Work/file1.txt')
+print(format(p.stat().st_mode,'o'))
