@@ -1,0 +1,18 @@
+Create table format:
+hfmt = '{:18s}' + ('  {:>5}' * 6)
+print(hfmt.format('Name', 'File', 'Dir', 'Link', 'FIFO', 'Block', 'Character'))
+
+Output:
+Name                 File    Dir   Link   FIFO  Block  Character
+
+Beautiful format
+How to format the output using zip and iter method?
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+for i,j,k in zip(*[iter(lst)] *3):
+    print('{:4} {:4} {:4}'.format(i, j, k))
+
+Output:
+1    2    3
+4    5    6
+7    8    9
