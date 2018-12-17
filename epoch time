@@ -1,0 +1,11 @@
+How to get the current epoch time?
+import time; time.time()
+
+Output:
+1545035660.2161598
+
+How to convert current time from epoc time?
+import time; time.ctime(1545035333.18849)
+
+Output:
+'Mon Dec 17 13:58:53 2018'
