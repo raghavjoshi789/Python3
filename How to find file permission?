@@ -1,5 +1,5 @@
-from time import ctime
 from pathlib import Path
+import stat
 
-p = Path('/home/mana/Work/file1.txt')
-print(format(p.stat().st_mode,'o'))
+p = Path('/home/mana/Work/file1.txt').stat().st_mode
+format(stat.S_IMODE(p), 'o')
