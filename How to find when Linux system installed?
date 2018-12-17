@@ -1,0 +1,5 @@
+from pathlib import Path
+from time import ctime
+
+p = Path('/').stat()[-1]
+ctime(p)
