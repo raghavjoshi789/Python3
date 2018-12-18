@@ -1,0 +1,7 @@
+from os.path import islink
+from pathlib import Path
+
+p = Path('/var')
+links = [(i,i.resolve()) for i in p.iterdir() if islink(i)]
+for j,k in links:
+    print('{!r} --> {}'.format(str(j),k))
