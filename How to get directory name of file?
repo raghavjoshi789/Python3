@@ -1,0 +1,20 @@
+
+
+# Method: 1
+import os.path
+
+os.path.dirname('/home/mana/Work/test.sh')
+
+# Method: 2
+import os.path
+
+os.path.split('/home/mana/Work/test.sh')[0]
+
+# Method: 3
+path = '/home/mana/Work/test.sh'.split('/')
+'/'.join(path[:-1])
+
+# Method: 4
+from pathlib import Path
+
+print(Path('/home/mana/Work/test.sh').parent)
