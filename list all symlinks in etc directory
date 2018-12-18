@@ -1,2 +1,4 @@
+from pathlib import Path
+
 d = Path('/etc')
-[i for i in d.glob('**/*') if i.is_symlink()]
+[i for i in d.rglob('*') if i.is_symlink()]
