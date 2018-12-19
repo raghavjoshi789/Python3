@@ -1,0 +1,11 @@
+# Method: 1
+from pathlib import Path
+
+p = Path('my/library/setup.py')
+p.suffix
+
+# Method: 2
+import os.path
+
+p = '/home/mana/setup.py'
+os.path.splitext(p)[1]
