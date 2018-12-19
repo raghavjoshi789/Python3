@@ -2,3 +2,10 @@ from subprocess import check_output as chk
 
 cmd = 'ps -A -o pid,comm,state'.split()
 [i for i in chk(cmd).decode().splitlines() if i.split()[-1] == 'Z']
+
+# This code for latest Python Version
+from subprocess import run,PIPE
+
+cmd = 'ps -A -o pid,comm,state'.split()
+out = run(cmd, stdout=PIPE).stdout
+[i for i in out.decode().splitlines() if i.split()[-1] == 'Z']
