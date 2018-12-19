@@ -1,0 +1,4 @@
+from subprocess import check_output as chk
+
+cmd = 'ps -A -o pid,comm,state'.split()
+[i for i in chk(cmd).decode().splitlines() if i.split()[-1] == 'Z']
