@@ -29,3 +29,9 @@ if os.access(path, os.R_OK):
     with open(path) as opn:
         st = opn.read()
 st.splitlines()
+***********************************************************
+## How to get user uid,gid?
+import pwd
+
+uid, gid = pwd.getpwnam('mana')[2],  pwd.getpwnam('mana')[3]
+print(uid,gid)
