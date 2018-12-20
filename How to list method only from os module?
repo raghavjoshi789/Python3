@@ -1,0 +1,6 @@
+import os
+import re
+
+clt = [i for i in dir(os) if callable(eval('os.'+i))]
+method = [j for j in clt if re.search(r'^[a-z]',j)]
+method
