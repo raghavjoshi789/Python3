@@ -1,0 +1,31 @@
+## How to find file permission?
+
+from pathlib import Path
+import stat
+
+p = Path('/home/mana/Work/file1.txt').stat().st_mode
+format(stat.S_IMODE(p), 'o')
+***********************************************************
+## Method: 1 How to change permission using mode value?
+
+import os
+import stat
+
+os.chmod('my.txt',stat.S_IREAD)
+************************************************************
+## Method: 2 How to change permission directly?
+
+import os
+
+os.chmod('my.txt',0o777)
+***********************************************************
+## How to check user have read permission before open file?
+
+import os
+
+path = '/home/mana/Work/test.sh'
+
+if os.access(path, os.R_OK):
+    with open(path) as opn:
+        st = opn.read()
+st.splitlines()
