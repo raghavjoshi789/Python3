@@ -1,4 +1,10 @@
-
 import keyword
 
-print(keyword.kwlist)
+key = [i for i in keyword.kwlist]
+
+print('*'*30)
+print('Keywords'.center(30))
+print('*'*30)
+
+for a,b,c in zip(*[iter(key)] *3):
+    print('{:10} {:10} {}'.format(a,b,c))
