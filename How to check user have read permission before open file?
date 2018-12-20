@@ -1,8 +1,0 @@
-import os
-
-path = '/home/mana/Work/test.sh'
-
-if os.access(path, os.R_OK):
-    with open(path) as opn:
-        st = opn.read()
-st.splitlines()
