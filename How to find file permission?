@@ -1,5 +1,0 @@
-from pathlib import Path
-import stat
-
-p = Path('/home/mana/Work/file1.txt').stat().st_mode
-format(stat.S_IMODE(p), 'o')
