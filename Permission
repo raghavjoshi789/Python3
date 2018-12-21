@@ -35,3 +35,10 @@ import pwd
 
 uid, gid = pwd.getpwnam('mana')[2],  pwd.getpwnam('mana')[3]
 print(uid,gid)
+*************************************************************
+## How to change user id, group id?
+import pwd
+import os
+
+uid, gid = pwd.getpwnam('mana')[2],  pwd.getpwnam('mana')[3]
+os.chown('/home/mana/Work/number.txt', uid, gid)
