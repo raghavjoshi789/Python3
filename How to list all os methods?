@@ -1,3 +1,9 @@
+# Method: 1
+import os
+
+[i for i in dir(os) if callable(getattr(os, i))]
+*****************************************************
+# Method: 2
 import os
 
 [i for i in dir(os) if callable(eval('os.'+i))]
