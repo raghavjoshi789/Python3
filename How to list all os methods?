@@ -1,5 +1,3 @@
 import os
 
-clt = [i for i in dir(os) if callable(eval('os.'+i))]
-method = [x for x in clt]
-method
+[i for i in dir(os) if callable(eval('os.'+i))]
