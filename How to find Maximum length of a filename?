@@ -1,0 +1,5 @@
+import os
+
+fd = os.open('/home/mana/Work/today.txt', os.O_RDWR)
+fmax = os.fpathconf(fd, 'PC_NAME_MAX')
+print(f'Maximum length of a filename : {fmax}')
