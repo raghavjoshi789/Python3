@@ -1,0 +1,8 @@
+import os
+
+path = '/home/mana/Work/tmp.txt'
+
+if os.access(path, os.R_OK):    # This is check permission
+    with open(path) as opn:
+        st = opn.read()
+st.splitlines()
