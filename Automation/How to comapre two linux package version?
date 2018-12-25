@@ -1,0 +1,10 @@
+from pathlib import Path
+import os
+import re
+
+p = Path.cwd()
+ver = [(i.name,re.findall(r'\d{1,}(?:-|\.)\d{1,}', str(i))) for i in p.iterdir()]
+if ver[1][1] > ver[0][1]:
+    print('Latest Version:', ver[1][0])
+else:
+    print('Lower Version:', ver[0][0])
