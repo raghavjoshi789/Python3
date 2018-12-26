@@ -1,8 +1,11 @@
-
 from pathlib import Path
+import os
 import re
 
-compose = re.compile(r'\d{1,}(?:-|\.)\d{1,}.*\d{1,}(?:-|\.)\d{1,}')
+print(os.listdir()) # List available packages to comapre
+print('*'*65)
+
+compose = re.compile(r'\d{1,}(?:-|\.)\d{1,}|\d{1,}(?:-|\.)\d{1,}.*\d{1,}(?:-|\.)\d{1,}')
 p = Path('/home/mana/Downloads')
 clt = [(i.name,compose.findall(str(i))) for i in p.iterdir()]
 ver = {a:int(re.sub(r'-|\.','',b[0])) for a,b in clt}
