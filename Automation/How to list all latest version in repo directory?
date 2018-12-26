@@ -1,0 +1,20 @@
+from pathlib import Path
+import re
+
+clt_pack = {}
+p = Path('/home/mana/Downloads')
+
+cltp = [str(i.name) for i in p.iterdir()]
+same_package = [(i, re.split(r'\d{1,}(?:-|\.)\d{1,}',i,1)[0]) for i in cltp]
+def chk_version(*x):
+    compose = re.compile(r'\d{1,}(?:-|\.)\d{1,}|\d{1,}(?:-|\.)\d{1,}.*\d{1,}(?:-|\.)\d{1,}')
+    temp = [(y,''.join(compose.findall(str(y))).lstrip('0.')) for y in x]
+    ver = {a:int(re.sub(r'-|\.','',b)) for a,b in temp}
+    latest = max(ver.items(),key = lambda x: x[1])[0]
+    print('Latest Version:',latest)
+    
+for j,k in same_package:
+    clt_pack.setdefault(k,[]).append(j)
+    
+for vkey in clt_pack.keys():
+    chk_version(*clt_pack[vkey])
