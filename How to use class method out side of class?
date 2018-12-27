@@ -1,9 +1,0 @@
-class MyClass():
-    def f(self):
-        return 'Hi!'
-    
-x = MyClass()
-xf = x.f # Method  Object
-
-for i in range(3):
-    print(xf())
