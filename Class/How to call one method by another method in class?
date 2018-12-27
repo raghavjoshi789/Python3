@@ -1,0 +1,10 @@
+class A:        
+    def add_name(self, name):
+        print('My name:', name)
+    
+    def add_another_name(self, name):
+        self.add_name(name)   # This is call another menthod by self
+
+obj = A()
+obj.add_name('Manavalan')
+obj.add_another_name('Micheal')
