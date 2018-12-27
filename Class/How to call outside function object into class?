@@ -1,0 +1,22 @@
+
+Example: 1
+
+def add(x, y):
+    return x +y
+
+class Addition(object):
+    ad = staticmethod(add)
+
+add(5, 4)
+obj = Addition()
+obj.ad(5,4)
+
+Example: 2
+def add(x, y):
+    return x +y
+
+class Addition(object):
+    ad = add(5,4)
+
+obj = Addition()
+obj.ad
