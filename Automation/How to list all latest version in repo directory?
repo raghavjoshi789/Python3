@@ -9,7 +9,7 @@ def chk_version(*x):
     compose = re.compile(r'\d{1,}(?:-|\.)\d{1,}|\d{1,}(?:-|\.)\d{1,}.*\d{1,}(?:-|\.)\d{1,}')
     temp = [(y,''.join(compose.findall(str(y))).lstrip('0.')) for y in x]
     ver = {a:int(re.sub(r'-|\.','',b)) for a,b in temp}
-    latest = max(ver.items(),key = lambda x: x[1])[0]
+    latest = max(ver.items(),key = lambda x: x[1])[0].name
     print('Latest Version:',latest)
     
 for j,k in same_package:
