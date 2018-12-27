@@ -4,9 +4,9 @@ import re
 clt_pack = {}
 p = Path('/home/mana/Downloads')
 same_package = [(i, re.split(r'\d{1,}(?:-|\.)\d{1,}',str(i),1)[0]) for i in p.iterdir()]
+compose = re.compile(r'\d{1,}(?:-|\.)\d{1,}|\d{1,}(?:-|\.)\d{1,}.*\d{1,}(?:-|\.)\d{1,}')
 
-def chk_version(*x):
-    compose = re.compile(r'\d{1,}(?:-|\.)\d{1,}|\d{1,}(?:-|\.)\d{1,}.*\d{1,}(?:-|\.)\d{1,}')
+def chk_version(*x):    
     temp = [(y,''.join(compose.findall(str(y))).lstrip('0.')) for y in x]
     ver = {a:int(re.sub(r'-|\.','',b)) for a,b in temp}
     latest = max(ver.items(),key = lambda x: x[1])[0].name
