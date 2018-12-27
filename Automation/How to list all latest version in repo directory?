@@ -3,9 +3,8 @@ import re
 
 clt_pack = {}
 p = Path('/home/mana/Downloads')
+same_package = [(i, re.split(r'\d{1,}(?:-|\.)\d{1,}',str(i),1)[0]) for i in p.iterdir()]
 
-cltp = [str(i.name) for i in p.iterdir()]
-same_package = [(i, re.split(r'\d{1,}(?:-|\.)\d{1,}',i,1)[0]) for i in cltp]
 def chk_version(*x):
     compose = re.compile(r'\d{1,}(?:-|\.)\d{1,}|\d{1,}(?:-|\.)\d{1,}.*\d{1,}(?:-|\.)\d{1,}')
     temp = [(y,''.join(compose.findall(str(y))).lstrip('0.')) for y in x]
