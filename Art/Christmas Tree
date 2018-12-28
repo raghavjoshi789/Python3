@@ -7,3 +7,4 @@ while b > 0 and c < 33 :
 for r in range(3):
     print(' '*33,'||')
 print(' '*32, end = '\====/')
+print('')
