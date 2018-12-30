@@ -1,0 +1,20 @@
+class Stuendt:
+    pass
+
+stu1 = Stuendt()
+stu1.name = 'Manavalan'
+stu1.no = '100'
+stu1.major = 'Computers'
+
+print(stu1.name)
+print(stu1.no)
+print(stu1.major)
+
+stu1.__dict__
+
+Output:
+Manavalan
+100
+Computers
+{'name': 'Manavalan', 'no': '100', 'major': 'Computers'}
+
