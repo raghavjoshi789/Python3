@@ -1,0 +1,19 @@
+How to change private data value using property?
+Whenever we use p1.val, it internally calls the appropriate getter, setter.
+
+class A:
+    def __init__(self, value):
+        self.__x = value    # This is private data
+        
+    @property
+    def val(self):
+        return self.__x
+    
+    @val.setter
+    def val(self, value):
+        self.__x = value
+        
+p1 = A('Mana')
+print(p1.val)
+p1.val = 'Xavier'
+print(p1.val)
