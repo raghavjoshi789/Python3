@@ -1,0 +1,13 @@
+Instance data attribute mapped in dictionary format.
+
+
+class MyName:
+    def __init__(self, name, city):
+        self.name = name
+        self.city = city
+        
+nam = MyName('Manavalan', 'Chennai')
+nam.__dict__
+
+Output:
+{'name': 'Manavalan', 'city': 'Chennai'}
