@@ -1,5 +1,16 @@
 @staticmethod is similar to a python function but define in a class.
 
+# Call static function using object.
+class MyCity:
+    @staticmethod
+    def print_city(city):
+        return city
+    
+c = MyCity()   
+c.print_city('Chennai')
+
+
+# Call static function using classname.
 class MyCity:
     @staticmethod
     def print_city(city):
