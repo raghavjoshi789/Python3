@@ -6,9 +6,9 @@ class Person:
         self.age = age 
       
     @classmethod
-    def fromBirthYear(cls, name, year):            # Function Constructor 
+    def myage(cls, name, year):            # Function Constructor 
         return cls(name, date.today().year - year) 
 
-person1 = Person.fromBirthYear('mayank', 1996)
+person1 = Person.myage('Manavalan', 1996)
 print(person1.name)
 print(person1.age)
