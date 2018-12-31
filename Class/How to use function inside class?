@@ -1,3 +1,5 @@
+@staticmethod is similar to a python function but define in a class.
+
 class MyCity:
     @staticmethod
     def print_city(city):
