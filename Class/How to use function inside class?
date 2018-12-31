@@ -1,0 +1,9 @@
+class MyCity:
+    @staticmethod
+    def print_city(city):
+        return city
+    
+MyCity.print_city('Chennai')
+
+Output:
+‘Chennai’
