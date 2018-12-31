@@ -1,0 +1,14 @@
+from datetime import date 
+  
+class Person: 
+    def __init__(self, name, age): 
+        self.name = name 
+        self.age = age 
+      
+    @classmethod
+    def fromBirthYear(cls, name, year):            # Function Constructor 
+        return cls(name, date.today().year - year) 
+
+person1 = Person.fromBirthYear('mayank', 1996)
+print(person1.name)
+print(person1.age)
