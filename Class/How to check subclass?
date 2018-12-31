@@ -1,0 +1,11 @@
+Example: 1
+issubclass(bool, int)
+
+Out:
+True
+
+Example: 2
+issubclass(float, int)
+
+Out:
+False
