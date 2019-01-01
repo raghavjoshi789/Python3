@@ -1,0 +1,25 @@
+from pathlib import Path
+from os import statvfs as svfs
+import re
+
+mounts = Path('/proc/mounts')
+clt_lines = [line for line in mounts.read_text().splitlines()]
+clt_fs = [text.split()[:2] for text in clt_lines if re.match(r'^/dev/sd[a-z][1-9]', text)]
+clt_blocks = [(fsys,svfs(mp)[0], svfs(mp)[2], svfs(mp)[3], mp) for fsys, mp in clt_fs]
+
+def cal_tot(bs,tb):
+     return bs*tb/1073741824
+
+def cal_used(bs,tb,fb):
+    return (tb - fb)*bs/1073741824    
+
+def cal_free(bs,fb):
+    return bs*fb/1073741824
+
+def cal_size(*fileattrs):
+    for ar in fileattrs:
+        print('{} {:9.0f}G {:10.1f}G {:>10.1f}G   {:25}'.format(ar[0],cal_tot(ar[1],ar[2]),cal_used(ar[1],ar[2],ar[3]),cal_free(ar[1],ar[3]),ar[4]))
+
+print('{} {:>9} {:>11} {:>12} {:>12}'.format('Filesystem','Size','Used','Avail','Mounted-on'))
+print('*'*58)
+cal_size(*clt_blocks)
