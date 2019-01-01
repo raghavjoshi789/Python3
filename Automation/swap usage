@@ -1,0 +1,11 @@
+from pathlib import Path
+
+swp_txt = Path('/proc/swaps').read_text().splitlines()[1]
+total_swap, used_swap = swp_txt.split('\t')[1:3]
+print('{} {:>10}'.format('Total-Swap', 'Swap-Used'))
+if int(used_swap) <= 1024:
+    print('{:6.1f}G {:>10}K'.format(int(total_swap)/1048576,used_swap))
+elif int(used_swap) > 1024:
+    print('{:^5.1f}G {:>10}M'.format(int(total_swap)/1048576,int(used_swap)/1024))
+elif int(used_swap) > 1048576:
+    print('{:^5.1f}G {:>10}G'.format(int(total_swap)/1048576,int(used_swap)/1024/1024))
