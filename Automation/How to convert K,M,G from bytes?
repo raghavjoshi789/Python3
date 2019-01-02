@@ -1,14 +1,19 @@
+size = [1e+3, 1e+6, 1e+9]
+
 def convert(byts):
-    if byts < 1024:
-        return str(byts) + 'B'
-    elif 1e+6 > byts >= 1024:
-        return str(round(byts/1024)) + 'K'
-    elif  1e+9 > byts >= 1e+6:
-        return str(round(byts/1e+6)) + 'M'
-    elif byts >= 1e+9 :
-        return str(round(byts/1e+9)) + 'G'
+    if byts <= size[0]:
+        return str(byts)+'B'
+    elif size[0] <= byts <=  size[1]:
+        return str(round(byts/size[0]))+'K'
+    elif size[1] <= byts <=  size[2]:
+        return str(round(byts/size[1]))+'M'
+    elif byts >= size[2]:
+        return str(round(byts/size[2]))+'G'
         
 print(convert(1))
 print(convert(1024))
 print(convert(1024*1024))
 print(convert(1024*1024*1024))
+print(convert(102))
+print(convert(201277121))
+print(convert(106789578900))
