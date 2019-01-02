@@ -1,0 +1,5 @@
+import time
+
+for i in dir(time):
+    if callable(getattr(time, i)):
+        print(i)
