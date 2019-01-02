@@ -4,10 +4,10 @@ def convert(byts):
     if byts <= size[0]:
         return str(byts)+'B'
     elif size[0] <= byts <=  size[1]:
-        return str(round(byts/size[0]))+'K'
+        return str(round(byts/size[0],1))+'K'
     elif size[1] <= byts <=  size[2]:
-        return str(round(byts/size[1]))+'M'
+        return str(round(byts/size[1],1))+'M'
     elif byts >= size[2]:
-        return str(round(byts/size[2]))+'G'
+        return str(round(byts/size[2],1))+'G'
         
-print(convert(8765564))
+print(convert(871659564))
