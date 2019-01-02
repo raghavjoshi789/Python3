@@ -1,13 +1,11 @@
-size = [1e+3, 1e+6, 1e+9]
+import bisect
+size = [1, 1e+3, 1e+6, 1e+9]
+unit = ['B', 'K', 'M', 'G']
 
 def convert(byts):
-    if byts <= size[0]:
-        return str(byts)+'B'
-    elif size[0] <= byts <=  size[1]:
-        return str(round(byts/size[0],1))+'K'
-    elif size[1] <= byts <=  size[2]:
-        return str(round(byts/size[1],1))+'M'
-    elif byts >= size[2]:
-        return str(round(byts/size[2],1))+'G'
+    byts = int(byts)
+    index = bisect.bisect(size, byts)-1
+    return "{:.0f}{}".format(byts//size[index], unit[index])
+    
         
 print(convert(871659564))
