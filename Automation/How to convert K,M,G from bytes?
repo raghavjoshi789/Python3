@@ -10,10 +10,4 @@ def convert(byts):
     elif byts >= size[2]:
         return str(round(byts/size[2]))+'G'
         
-print(convert(1))
-print(convert(1024))
-print(convert(1024*1024))
-print(convert(1024*1024*1024))
-print(convert(102))
-print(convert(201277121))
-print(convert(106789578900))
+print(convert(8765564))
