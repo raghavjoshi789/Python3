@@ -1,11 +1,14 @@
 def convert(byts):
-    if byts < 1000:
-        print('{:.0f}B'.format(byts))
-    elif 1e+6 > byts >= 1000  :
-        print('{:.0f}K'.format(byts/1000))
-    elif  1e+9 > byts > 1e+6:
-        print('{:.0f}M'.format(byts/1e+6))
-    elif byts > 1e+9 :
-        print('{:.0f}G'.format(byts/1e+9))
+    if byts < 1024:
+        return str(byts) + 'B'
+    elif 1e+6 > byts >= 1024:
+        return str(round(byts/1024)) + 'K'
+    elif  1e+9 > byts >= 1e+6:
+        return str(round(byts/1e+6)) + 'M'
+    elif byts >= 1e+9 :
+        return str(round(byts/1e+9)) + 'G'
         
-convert(1024)  
+print(convert(1))
+print(convert(1024))
+print(convert(1024*1024))
+print(convert(1024*1024*1024))
