@@ -1,0 +1,28 @@
+import os
+
+file_dict = {}
+dir_size = []
+path = '/home/mana/Must Study'
+dirs = [w[0] for w in os.walk(path)]
+
+if len(dirs) == 1:
+    dirs = dirs
+else:
+    dirs = dirs[1:]
+
+for od in dirs:
+    for of in os.listdir(od):
+        file_dict.setdefault(od, []).append(os.path.getsize(od+'/'+of))
+
+for pdir, pfile in file_dict.items():
+    dir_size += [(pdir.lstrip('/home/mana/'), sum(pfile))]
+
+for fdir, fsize in dir_size:
+    if fsize <= 1024:
+        print('{:20} {:>10.0f}B'.format(fdir,fsize))
+    elif 1e+6 > fsize > 1024  :
+        print('{:20} {:>10.0f}K'.format(fdir,fsize/1024))
+    elif  1e+9 > fsize > 1e+6:
+        print('{:20} {:>10.0f}M'.format(fdir,fsize/1e+6))
+    elif fsize > 1e+9 :
+        print('{:20} {:>10.0f}G'.format(fdir,fsize/1e+9))
