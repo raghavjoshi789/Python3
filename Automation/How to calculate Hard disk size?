@@ -1,8 +1,7 @@
 from pathlib import Path
-import re
 
 dev_path = Path('/sys/block')
-disk = [p for p in dev_path.iterdir() if re.search(r'sd[a-z]',str(p))]
+disk = [p for p in dev_path.glob('sd[a-z]')]
 disk_dict = {d.name: d.joinpath('size').read_text().strip() for d in disk}
 
 for dev,size in disk_dict.items():
