@@ -1,9 +1,3 @@
 from pathlib import Path
 
-p = Path('/proc/cpuinfo').read_text().splitlines()
-chk = [[j for j in i.split() if 'vmx' in j] for i in p[19:20]]
-
-if chk[0][0] == 'vmx':
-    print('Yes. Your processor supports Virtualization')
-else:
-    print('No')
+'vmx' in Path('/proc/cpuinfo').read_text().split()
