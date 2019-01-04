@@ -1,0 +1,13 @@
+import bisect
+
+mark = [0, 40, 60, 80]
+grade = ['D','C', 'B', 'A']
+
+def stu(name,score):
+    index = bisect.bisect(mark, score) -1
+    return "{} got {} Grade.".format(name, grade[index])
+
+print(stu('Manavalan', 79))
+print(stu('Siva', 92))
+print(stu('Simon', 18))
+print(stu('Mani', 53))
