@@ -1,0 +1,6 @@
+import re
+
+for i in dir(''):
+    if re.match(r'^[a-z]',i):
+        print(getattr(str,i).__doc__)
+        print('*'*70)
