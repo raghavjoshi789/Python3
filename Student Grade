@@ -8,6 +8,3 @@ def stu(name,score):
     return "{} got {} Grade.".format(name, grade[index])
 
 print(stu('Manavalan', 79))
-print(stu('Siva', 92))
-print(stu('Simon', 18))
-print(stu('Mani', 53))
