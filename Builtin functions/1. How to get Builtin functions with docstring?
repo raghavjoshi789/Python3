@@ -1,0 +1,7 @@
+import builtins
+import re
+
+for i in dir(builtins):
+    if re.match(r'^[a-z]',i):
+        print(getattr(builtins,i).__doc__)
+        print('*'*70)
