@@ -1,0 +1,12 @@
+import pwd
+import grp
+import re
+
+unam, (uid, gid) = pwd.getpwnam('mana')[0], pwd.getpwnam('mana')[2:4]
+print('uid='+str(uid)+'('+unam+')', end = '')
+print(' gid='+str(gid)+'('+unam+')', end = '')
+gusr = [(str(gr[2])+'('+gr[0]+')') for gr in grp.getgrall() if re.search(r'mana',str(gr))]
+jusr = ','.join(gusr)
+print(' groups=', end='')
+for i in jusr:
+    print(i, end='')
