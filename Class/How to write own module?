@@ -1,0 +1,25 @@
+ Write Module:
+$ cat student.py 
+class Student:
+    def __init__(self,name,no,city):
+        self.name = name
+        self.no = no
+        self.city = city
+    
+    def add(self,x,y):
+        return x+y
+
+Call student module:			
+$ cat call_student_module.py 
+import student
+
+stu1 = student.Student('Mana', '76','che')
+print(stu1.name)
+print(stu1.add(5,5))
+
+Run:
+$ python3 call_student_module.py
+
+Output:
+Mana
+10
