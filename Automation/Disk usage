@@ -17,4 +17,4 @@ def con(byts):
 print('{:20} {:^10} {:^10} {:^8} {:>12}'.format('Filesystem','Size','Used','Avail','Mounted-on'))
 print('*'*61)
 for fs in clt:
-     print('{:20} {:^10} {:^10} {:^7}    {:20}'.format(fs[0],con(fs[1]),con(fs[1]-fs[2]),con(fs[2]),fs[3]))   
+     print('{:20} {:^10} {:^10} {:^10}    {:20}'.format(fs[0],con(fs[1]),con(fs[1]-fs[2]),con(fs[2]),fs[3]))   
