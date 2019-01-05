@@ -7,13 +7,13 @@ size = [1, 2**10, 2**20, 2**30]
 unit = ['B', 'K', 'M', 'G']
 mline = Path('/proc/mounts').read_text().splitlines()
 mdev = [lp.split()[:2] for lp in mline if re.match(r'^/dev/sd[a-z][1-9]', lp)]
-fmdev = [(fsl,svfs(mpl)[0],svfs(mpl)[2],svfs(mpl)[3],mpl) for fsl, mpl in mdev]
-clt = [(bcn[0],bcn[1]*bcn[2],bcn[1]*(bcn[2]-bcn[3]),bcn[1]*bcn[3],bcn[-1]) for bcn in fmdev]
+clt = [(fsl,svfs(mpl)[0]*svfs(mpl)[2],svfs(mpl)[0]*svfs(mpl)[3],mpl) for fsl, mpl in mdev]
 
 def con(byts):
     index = bisect.bisect(size, byts)-1
     return "{:.0f}{}".format(byts/size[index], unit[index])
 
 print('{} {:>19} {:>8} {:>8} {:>12}'.format('Filesystem','Size','Used','Avail','Mounted-on'))
+print('*'*61)
 for fs in clt:
-    print('{:25} {} {:>8} {:>7}    {:25}'.format(fs[0],con(fs[1]),con(fs[2]),con(fs[3]),fs[4]))
+     print('{:25} {} {:>8} {:>7}    {:25}'.format(fs[0],con(fs[1]),con(fs[1]-fs[2] ),con(fs[2]),fs[3]))   
