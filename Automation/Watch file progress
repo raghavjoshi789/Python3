@@ -1,0 +1,9 @@
+from time import sleep
+
+while True:
+    with open('/home/mana/Work/tim.txt') as vl:
+        rd = vl.read().splitlines()[-3:]
+        for i in rd:
+#            print(i, end = '\r')
+            print(i)
+            sleep(1)
