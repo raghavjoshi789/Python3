@@ -1,0 +1,15 @@
+
+import spwd
+
+enc_pwd = spwd.getspnam(user)[1]
+if enc_pwd in ["NP", "!", "", None]:
+  return "user '%s' has no password set" % user
+if enc_pwd in ["LK", "*"]:
+  return "account is locked"
+if enc_pwd == "!!":
+  return "password has expired"
+      
+if crypt.crypt(password, enc_pwd) == enc_pwd:
+return True
+else:
+  return "incorrect password"
