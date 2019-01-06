@@ -1,0 +1,7 @@
+from time import sleep
+
+while True:
+    with open('/var/log/syslog') as vl:
+        rd = vl.read().splitlines()[-1]
+        print(rd)
+        sleep(1)
