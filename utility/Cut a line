@@ -1,0 +1,9 @@
+line = 'This is cut utility shall cut out word.'
+mcut = line.split()
+
+def cut(n):
+    return mcut[:n]
+    
+inp = int(input('Enter your How many words cut: '))
+print(*cut(inp))
+    
