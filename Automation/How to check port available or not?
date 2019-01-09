@@ -1,0 +1,16 @@
+from pathlib import Path
+import re
+
+tcpl = [i.replace('\t', ' ').rpartition('/tcp')[0].split()
+        for i in Path('/etc/services').read_text().splitlines() 
+        if re.search(r'/tcp', i)]
+port_dict = {int(no): na  for na, no in tcpl}
+
+def chk(no):
+    if no in port_dict.keys():
+        print('Yes.Port Avialable:',no, port_dict.get(no))
+    else:
+        print('No.Port not Avialable:',no, port_dict.get(no))
+
+inp = int(input('Enter Port Number:'))
+chk(inp)
