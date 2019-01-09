@@ -7,7 +7,7 @@ tcpl = [i.replace('\t', ' ').rpartition('/tcp')[0].split()
 port_dict = {int(no): na  for na, no in tcpl}
 
 def chk(pno):
-    if pno in port_dict.keys():
+    if pno in port_dict:
         print(pno,'-->', port_dict.get(pno))
     else:
         print(pno, '-->', port_dict.get(pno, 'Port not Available.'))
