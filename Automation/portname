@@ -6,11 +6,11 @@ tcpl = [i.replace('\t', ' ').rpartition('/tcp')[0].split()
         if re.search(r'/tcp', i)]
 port_dict = {int(no): na  for na, no in tcpl}
 
-def chk(no):
-    if no in port_dict.keys():
-        print('Yes.Port Avialable:',no, port_dict.get(no))
+def chk(pno):
+    if pno in port_dict.keys():
+        print(pno,'-->', port_dict.get(pno))
     else:
-        print('No.Port not Avialable:',no, port_dict.get(no))
+        print(pno, '-->', port_dict.get(pno))
 
 inp = int(input('Enter Port Number:'))
 chk(inp)
