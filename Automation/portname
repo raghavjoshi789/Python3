@@ -10,7 +10,7 @@ def chk(pno):
     if pno in port_dict.keys():
         print(pno,'-->', port_dict.get(pno))
     else:
-        print(pno, '-->', port_dict.get(pno))
+        print(pno, '-->', port_dict.get(pno, 'Port not Available.'))
 
 inp = int(input('Enter Port Number:'))
 chk(inp)
