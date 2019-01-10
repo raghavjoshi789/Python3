@@ -4,7 +4,10 @@ size = [1, 1e+3, 1e+6, 1e+9]  ## GB
 unit = ['B', 'K', 'M', 'G']
 
 def convert(byts):
-    index = bisect.bisect(size, byts)-1
-    return "{:.0f}{}".format(byts/size[index], unit[index])
+    if byts != 0:
+        index = bisect.bisect(size, byts) -1
+        return "{:.1f}{}".format(byts/size[index], unit[index])
+    else: 
+        return '0B'
     
 print(convert(871659564))
