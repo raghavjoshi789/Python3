@@ -1,0 +1,28 @@
+How to verify that user have rwx permissions?
+%%bash
+
+ls -l /home/mana/bios.py
+-rwxrw-r-- 1 mana mana 481 Dec 25 14:22 /home/mana/bios.py
+
+%%python3
+import os
+
+f = '/home/mana/bios.py'
+v = [0, 4, 2, 1]
+c = [os.access(f, i) for i in v]
+all(c)
+True
+
+%%bash
+
+ls -l /home/mana/cls.py
+-r-xrw-r-- 1 mana mana 97 Jan  5 10:58 /home/mana/cls.py
+
+%%python3
+import os
+
+f = '/home/mana/cls.py'
+v = [0, 4, 2, 1]
+c = [os.access(f, i) for i in v]
+all(c)
+False
