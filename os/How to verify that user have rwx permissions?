@@ -1,4 +1,3 @@
-How to verify that user have rwx permissions?
 %%bash
 
 ls -l /home/mana/bios.py
