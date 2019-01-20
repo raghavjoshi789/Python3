@@ -1,0 +1,46 @@
+# Gather from : Stackover folw.
+ A class inside a class looks like this:
+
+class Foo(object):
+    class Bar(object):
+        pass
+
+>>> foo = Foo()
+>>> bar = Foo.Bar()
+But it doesn't look to me like that's what you want. Perhaps you are after a simple containment hierarchy:
+
+class Player(object):
+    def __init__(self, ... airplanes ...) # airplanes is a list of Airplane objects
+        ...
+        self.airplanes = airplanes
+        ...
+
+class Airplane(object):
+    def __init__(self, ... flights ...) # flights is a list of Flight objects
+        ...
+        self.flights = flights
+        ...
+
+class Flight(object):
+    def __init__(self, ... duration ...)
+        ...
+        self.duration = duration
+        ...
+Then you can build and use the objects thus:
+
+player = Player(...[
+    Airplane(... [
+        Flight(...duration=10...),
+        Flight(...duration=15...),
+        ] ... ),
+    Airplane(...[
+        Flight(...duration=20...),
+        Flight(...duration=11...),
+        Flight(...duration=25...),
+        ]...),
+    ])
+
+player.airplanes[5].flights[6].duration = 5
+
+Reference link:
+https://stackoverflow.com/questions/3222251/python-2-6-class-inside-a-class?fbclid=IwAR1vawd5_yCsa954kNfSzwVlPBF8unDLyfOfHU7kRt2wwcrXjKXibkG9sTU
