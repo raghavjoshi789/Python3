@@ -1,0 +1,17 @@
+from datetime import date
+
+d = [i for i in dir(date) 
+     if not i.startswith('_')]
+print('These are Variables of date module:')
+print('*'*35)
+for x in d:
+    if not callable(getattr(date, x)):
+        print(x)
+else:
+    print()
+
+print('These are Methods of date module:')
+print('*'*35)
+for x in d:
+    if callable(getattr(date, x)):
+        print(x)
