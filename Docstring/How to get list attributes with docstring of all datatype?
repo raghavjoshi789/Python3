@@ -1,0 +1,24 @@
+import re
+
+# string
+for i in dir(''):
+    if re.match(r'^[a-z]',i):
+        print(getattr('',i).__doc__)
+        print('*'*70)
+# list
+for i in dir([]):
+    if re.match(r'^[a-z]',i):
+        print(getattr([],i).__doc__)
+        print('*'*70)
+
+# tuple
+for i in dir([]):
+    if re.match(r'^[a-z]',i):
+        print(getattr([],i).__doc__)
+        print('*'*70)
+
+# dictionary
+for i in dir({}):
+    if re.match(r'^[a-z]',i):
+        print(getattr({},i).__doc__)
+        print('*'*70)
