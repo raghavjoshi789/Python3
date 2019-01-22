@@ -1,0 +1,10 @@
+from datetime import date
+import os.path
+
+def modify(name):
+    mtime = os.path.getmtime(name)
+    d = date.today() - date.fromtimestamp(mtime)
+    return str(d.days) + " days before."
+
+inp = input('Enter file or directory name:')
+modify(inp)
