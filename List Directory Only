@@ -1,7 +1,0 @@
-
-import glob
-
-for i in glob.glob("/home/joe/Temp/test/*"):
-    if "." not in i:
-        print(i)
-        
