@@ -1,6 +1,0 @@
-#!/us/bin/env python3
-
-with open('/proc/cpuinfo') as fo:
-    cnt = [ i.strip().replace('\t','') for i in fo.readlines() if i.startswith('model name')]
-    print('Number of CPU:',len(cnt))
-    print('CPU Freqency:',cnt[1].split()[-1])
