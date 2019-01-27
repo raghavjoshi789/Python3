@@ -1,8 +1,0 @@
-from datetime import timedelta
-
-print('1 Second:',timedelta(seconds = 1))
-print('1 Mintue:',timedelta(seconds = 60))
-print('2 Mintues:',timedelta(seconds = 2*60))
-print('5 Mintues:',timedelta(seconds = 5*60))
-print('1 Hour:',timedelta(seconds = 60*60))
-print('1 Day:',timedelta(seconds = 24*3600))
