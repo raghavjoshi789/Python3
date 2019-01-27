@@ -1,0 +1,11 @@
+import filecmp
+
+filecmp.clear_cache()
+d1 = '/home/mana/Temp/task1'
+d2 = '/home/mana/Temp/task2'
+x = filecmp.dircmp(d1, d2)
+print('These files are same file name:')
+print(*x.common, sep = ',')
+print('')
+print('These files are same contents:')
+print(*x.same_files, sep = ',')
