@@ -1,8 +1,0 @@
-#!/us/bin/env python3
-
-with open('/proc/cpuinfo') as f:
-    r = f.read().splitlines()
-    cpu = [ i.replace('\t', '') for i in r if i.startswith('model name')]
-    total = [ float(cpu[i][-7:-3]) for i in range(len(cpu))]
-    print('This machine total CPU clock frequencies {}GHz'.format(sum(total)))
-    
