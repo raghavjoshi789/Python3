@@ -1,0 +1,2 @@
+from string import printable
+(lambda x: {i[0]:ord(i[0]) for i in x})(list(printable))
