@@ -14,7 +14,7 @@ try:
 except (PermissionError,FileNotFoundError):
     pass
 
-pname_dict = dict(pname_pid)
+pname_dict = dict(pname)
 for pid_no in pname_dict:
   try:
     osmaps = Path('/proc/'+str(pid_no)+'/smaps')    
