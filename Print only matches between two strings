@@ -1,0 +1,7 @@
+s1 = "Linux Operating System." 
+s2 = "Unix operating System." 
+
+result = []
+for a, b in zip(s1.split(), s2.split()):
+    if a == b:
+        print(a,b)
