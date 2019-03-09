@@ -9,7 +9,7 @@ path = Path('/home/mana/Must Study')
 clt_files = [fr for fr in path.rglob('*')]
 for rf in clt_files:
     if not rf.is_dir():
-        file_dict[rf.parent] = file_dict.get(rf.parent, 0)+gts(rf)
+        file_dict[rf.parent] = file_dict.get(rf.parent, 0)+gts(str(rf))
 def convert(byts):
     byts = int(byts)
     index = bisect.bisect(size, byts)-1
