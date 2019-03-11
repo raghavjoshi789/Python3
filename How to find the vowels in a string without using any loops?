@@ -9,3 +9,6 @@ s = 'abcd'
 v = 'aeiou'
 
 set(s) & set(v)
+
+# Method: 3
+list(filter(lambda x: x in 'aeiouy', 'somestring'))
