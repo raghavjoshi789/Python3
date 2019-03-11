@@ -1,7 +1,12 @@
+# Method: 1
+
+from re import findall
+
+s = 'abcd'
+findall(r'[aeiou]',s)
+
+# Method: 2
 s = 'abcd'
 v = 'aeiou'
 
-if set(s) & set(v):
-    print(repr(s),'String has Vowels')
-else:
-    print(repr(s),'String has no Vowels')
+set(s) & set(v)
