@@ -1,0 +1,7 @@
+s = 'abcd'
+v = 'aeiou'
+
+if set(s) & set(v):
+    print(repr(s),'String has Vowels')
+else:
+    print(repr(s),'String has no Vowels')
