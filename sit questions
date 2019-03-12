@@ -31,6 +31,20 @@ Length of word and assgin to variable
 
 word = 'list of words of lengths'
 
+for i, j in enumerate(word.split(), 97):
+    exec("{}='{}'".format(chr(i), j))
+    
+(OR)
+
+word = 'list of words of lengths'
+
+for i,j in enumerate(word.split(),97):
+    eval("chr(i),'=',len(j)")
+    
+(OR)
+
+word = 'list of words of lengths'
+
 for i,j in enumerate(word.split(),97):
     print(chr(i),'=',repr(j))
     
