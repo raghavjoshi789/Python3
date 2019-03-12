@@ -27,9 +27,7 @@ while i >= 0:
     i -= 1
 
 ************************************************
-Write code to creat a "list of words of lengths" for the words in #original_str 
-using the accumulation patern and assign thr answer to a variable #num_words_list..
-....you should use the len function
+Length of word and assgin to variable
 
 word = 'list of words of lengths'
 
