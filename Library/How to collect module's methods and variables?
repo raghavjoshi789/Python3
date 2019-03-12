@@ -1,17 +1,17 @@
-from datetime import date
+import string
 
-d = [i for i in dir(date) 
+d = [i for i in dir(string) 
      if not i.startswith('_')]
-print('These are Variables of date module:')
-print('*'*35)
+print('These are Variables of string module:')
+print('*'*37)
 for x in d:
-    if not callable(getattr(date, x)):
+    if not callable(getattr(string, x)):
         print(x)
 else:
     print()
 
-print('These are Methods of date module:')
-print('*'*35)
+print('These are Classes and Methods of string module:')
+print('*'*47)
 for x in d:
-    if callable(getattr(date, x)):
+    if callable(getattr(string, x)):
         print(x)
