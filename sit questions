@@ -35,3 +35,12 @@ word = 'list of words of lengths'
 
 for i,j in enumerate(word.split(),97):
     print(chr(i),'=',repr(j))
+    
+    (OR)
+    
+   word = 'list of words of lengths'
+
+for i,j in enumerate(word.split(),97):
+    print(chr(i),'=',len(j))
+    
+    *********************************************
