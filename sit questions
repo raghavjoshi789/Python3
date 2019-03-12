@@ -1,3 +1,4 @@
+Questions:
 
 How to reverse the string with out take another string
 
@@ -5,8 +6,9 @@ ex: --
 input:-- s = 'hello' 
 Output: -- s = 'olleh'
 
-***********************************************
-
+Answers:
 s = 'hello' 
 s[-1]+s[2:4]+s[1]+s[0]
+
+***********************************************
 
