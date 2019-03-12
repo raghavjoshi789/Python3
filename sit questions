@@ -12,3 +12,18 @@ s[-1]+s[2:4]+s[1]+s[0]
 
 ***********************************************
 
+What logic used behind reverse string?
+
+# Pythonic Way
+s = 'hello' 
+s[::-1]
+
+# This is logic
+s = 'hello' 
+i = len(s) - 1
+
+while i >= 0:
+    print(s[i], end = '')
+    i -= 1
+
+************************************************
