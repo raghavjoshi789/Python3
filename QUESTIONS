@@ -98,10 +98,21 @@ without using split method first letter must be in capital after space.
 
 import string
 
-
 letters = string.ascii_lowercase
 print(letters)
 wrd = letters[0:5]
 print(wrd)
 spt_word = [wrd[0:4],wrd[:],wrd[1]+wrd[::2].replace('e',wrd[3])]
 print(*(map(str.capitalize,spt_word)))
+
+OR
+
+import string
+
+letters = string.ascii_lowercase
+print(letters)
+wrd = letters[0:5]
+print(wrd)
+spt_word = [wrd[0:4],wrd[:],wrd[1]+wrd[::2].replace('e',wrd[3])]
+str.title(' '.join(spt_word))
+***********************************************************
