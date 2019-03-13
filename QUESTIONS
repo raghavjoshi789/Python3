@@ -91,3 +91,17 @@ OR
 
 week_temps_f = "75.1,77.7,83.2,82.5,81.0,79.5,85.7".split(',')
 round(sum(map(float, week_temps_f))/len(week_temps_f),1)
+
+******************************************************
+Write a program to print following Abcd Abcde Bacd from letters 
+without using split method first letter must be in capital after space.
+
+import string
+
+
+letters = string.ascii_lowercase
+print(letters)
+wrd = letters[0:5]
+print(wrd)
+spt_word = [wrd[0:4],wrd[:],wrd[1]+wrd[::2].replace('e',wrd[3])]
+print(*(map(str.capitalize,spt_word)))
