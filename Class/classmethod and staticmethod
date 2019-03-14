@@ -1,0 +1,32 @@
+##CLASSMETHOD##
+classmethod is function constructor similir to constructor called factory methods.
+@classmethod decorator in python to create a class method.
+classmethod takes cls as first parameter.
+
+from datetime import date 
+  
+class Person: 
+    def __init__(self, name, age): 
+        self.name = name 
+        self.age = age 
+    
+    @classmethod              # Function Constructor 
+    def fromBirthYear(cls, name, year): 
+        return cls(name, date.today().year - year) 
+
+person1 = Person.fromBirthYear('Micheal', 1996)   
+print(person1.name)
+print(person1.age)
+
+
+##STATICMETHOD##
+staticmethod is similar to a python function but define in a class.
+@staticmethod decorator to create a static method in python.
+static method needs no specific parameters.
+
+class MyCity:
+    @staticmethod
+    def print_city(city):
+        return city
+    
+MyCity.print_city('Chennai')   
