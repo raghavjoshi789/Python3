@@ -1,0 +1,2 @@
+How to alter string without index and slicing?
+'{1}{0}{2}'.format(*'odg')
