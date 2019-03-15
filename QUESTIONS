@@ -171,3 +171,7 @@ inp = input('Enter Score:')
 chk_grde(inp)
 
 ************************************
+How to filter intger only?
+
+list(filter(lambda x: isinstance(x, int), ['a', 1, 'b', 2, 'c', 3]))
+******************************************************
