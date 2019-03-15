@@ -116,3 +116,31 @@ print(wrd)
 spt_word = [wrd[0:4],wrd[:],wrd[1]+wrd[::2].replace('e',wrd[3])]
 str.title(' '.join(spt_word))
 ***********************************************************
+How to convert multi dimensional array into one dimensional array?
+#method: 1
+marry = [[1,2,3],[4,5,6],[7,8,9]]
+one_dimensinal_arry = sum(marry, [])
+one_dimensinal_arry
+
+OR
+
+#method: 2
+marry = [[1,2,3],[4,5,6],[7,8,9]]
+a = []
+for x in marry:
+    a += x
+a
+
+OR
+
+#method: 3
+import heapq
+marry = [[1,2,3],[4,5,6],[7,8,9]]
+list(heapq.merge(*marry))
+
+OR
+
+#method: 4
+import itertools
+marry = [[1,2,3],[4,5,6],[7,8,9]]
+list(itertools.chain.from_iterable(marry))
