@@ -174,4 +174,9 @@ chk_grde(inp)
 How to filter intger only?
 
 list(filter(lambda x: isinstance(x, int), ['a', 1, 'b', 2, 'c', 3]))
+
+OR
+
+li = ['a', 1, 'b', 245, 'c', 3] 
+[i for i in li if str(i).isdigit()]
 ******************************************************
