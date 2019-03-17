@@ -1,0 +1,8 @@
+import os
+import re
+
+f = os.listdir('/dev/disk/by-id')
+disk = list(filter(lambda x: re.search(r'[a-z]*-.*[A-Z]$',x),f))
+diskp = re.sub(r'ata-|_',' ',disk[0]).split()
+print('Model Number:', diskp[0])
+print('Serial Number:', diskp[1])
