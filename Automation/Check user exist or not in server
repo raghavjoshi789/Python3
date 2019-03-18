@@ -1,0 +1,9 @@
+import pwd
+
+usr = 'mana'
+
+try:
+    if pwd.getpwnam(usr)[0] != '':
+        print("User {!r} exist.".format(usr))
+except KeyError:
+    print("User {!r} does not exist.".format(usr))
