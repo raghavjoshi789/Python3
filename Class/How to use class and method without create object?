@@ -1,0 +1,9 @@
+class fruit:
+    def is_sweet():
+        return True
+#        return False  
+
+if fruit.is_sweet():
+    print("yes")
+else:
+    print("No")
