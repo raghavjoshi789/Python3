@@ -1,14 +1,17 @@
+## HOW TO VIEW LOGS IN PARTICUALAR TIME WITH PARTICUALR TEXT ##
+
 from datetime import datetime,timedelta
+from pathlib import Path
+import re
 
-inp = int(input('Enter Minutes:'))
+inpm = int(input('Enter Minutes:'))
+inpt = input('Enter Search Text:')
+comp = re.compile(r''+str(inpm)+'.*'+inpt+'')
+
 now = datetime.now()
-s = [(now - timedelta(minutes=x)).strftime("%b%e %H:%M") 
+s = [(now - timedelta(minutes=x)).strftime("%b %e %H:%M") 
      for x in range(inp)]
-
-with open('/var/log/syslog') as opf:
-    rd = opf.readlines()
-        
-for i in rd:
-    j = ' '.join(i.split()[:3])
-    if j.rpartition(':')[0] in s:
-        print(i.strip())
+logs = Path('/var/log/syslog').read_text().splitlines()
+for line in logs:
+    if comp.search(line):
+        print(line)
