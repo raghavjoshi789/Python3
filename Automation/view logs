@@ -1,4 +1,4 @@
-## HOW TO VIEW LOGS IN PARTICUALAR TIME WITH PARTICUALR TEXT ##
+## How To View Logs In Specific Time By Particular Text? ##
 
 from datetime import datetime,timedelta
 from pathlib import Path
