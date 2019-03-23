@@ -194,6 +194,19 @@ for i in lst:
 even + odd
 *************************************************
 Can we create a program that generates a number sequence with n iteration without using any list or If statement?
+I don't know how to make it without use of If or List.
+
+Ex 
+$python3 gen1.py 6
+0,1,2,3,0,1
+
+$python3 gen1.py 8
+0,1,2,3,0,1,2,3
+
+Code:
+print(*range(0,4),*range(0,4))
+
+OR
 
 print(*range(0,4), end =' ')
 print(*range(0,4))
