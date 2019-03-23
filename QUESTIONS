@@ -192,3 +192,8 @@ for i in lst:
     else:
         odd += [i]
 even + odd
+*************************************************
+Can we create a program that generates a number sequence with n iteration without using any list or If statement?
+
+print(*range(0,4), end =' ')
+print(*range(0,4))
