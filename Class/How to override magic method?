@@ -1,0 +1,12 @@
+# Here, I override __len__ method. Defualt len method call __len___
+
+# What is output of len('Python')?
+# It should 6. But, here alter len method. so it show 3.
+
+class Len:
+    def __len__(self):
+        x = 0
+        for i in 'Python':
+            x += 1
+        return x - 3
+len(Len())  
