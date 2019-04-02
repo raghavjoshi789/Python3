@@ -1,4 +1,9 @@
 
 Write 123..
+
 Write ABCD..
+
 Write abcd..
+
+How many Apple word repeated in this text?
+text = "Apple is red Apple , it is sweet Apple"
