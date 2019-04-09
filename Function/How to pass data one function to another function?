@@ -1,0 +1,18 @@
+## Example: 1 ##
+def outer(x, y): 
+    z = x + y
+    def inner():
+        return z + 1 
+    return inner()
+
+outer(5, 4)      
+
+## Example: 2 ##
+def outer(z): 
+    return z
+
+def inner(z):
+    return z + 1
+o = outer(50)
+
+inner(o)      
