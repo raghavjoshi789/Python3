@@ -1,0 +1,16 @@
+## Positional arguments ##
+def name(firstname, lastname):
+    return firstname + ' ' +lastname
+
+name('Manavalan', 'Micheal')
+
+## Keyword arguments ##
+def name(firstname, lastname = ""):
+    return firstname + ' ' +lastname
+
+name('Manavalan')
+
+def name(firstname, lastname = ""):
+    return firstname + ' ' +lastname
+
+name('Manavalan', 'Micheal')
