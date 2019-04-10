@@ -4,9 +4,10 @@ class Foo:
         self.x = 20
         
 f = Foo()
+print(f.x)
 f.hello()
-p = Foo()
-print(Foo.x, f.x, p.x)
+print(f.x)
 
 Output:
-10 20 10
+10
+20
