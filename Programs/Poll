@@ -1,0 +1,21 @@
+## Calculate and print the percentage of male and female answered "yes" to a poll ##
+
+yes_male, no_male, yes_female, no_female = 0,0,0,0
+
+for _ in range(5):
+    gender = input('Enter Male or Female:')
+    poll = input('Enter Your Poll Y[es] or N[o]:')
+
+    if gender in ['m', 'M', 'Male'] and poll in ['y', 'Y', 'Yes']:
+        yes_male += 1
+    elif gender in ['m', 'M', 'Male'] and poll in ['n', 'N', 'No']: 
+        no_male += 1
+    elif gender in ['f', 'F', 'Female'] and poll in ['y', 'Y', 'Yes']:
+        yes_female += 1
+    elif gender in ['f', 'F', 'Female'] and poll in ['n', 'N', 'No']:   
+        no_female += 1
+else:
+    print('People Answered Yes:', yes_male + yes_female)
+    print('People Answered No:', no_male + no_female)
+    print('Percentage of male answer yes {:.0%}'.format(yes_male/(yes_male+no_male+0.00001)))
+    print('Percentage of female answer yes {:.0%}'.format(yes_female/(yes_female+no_female+0.00001)))
