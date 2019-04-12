@@ -1,0 +1,9 @@
+from datetime import datetime,timedelta
+
+shifts = ['ZW', 'ZW', 'DO', 'DO', 'DO', 'DO', 'DO', 'DO', 'LM6', 'EE', 'EE', 'LM6', 
+          'E', 'LD', 'LD', 'DO', 'DO', 'DO', 'DO', 'DO', 'E', 'LM6', 'LM6', 'EE', 
+          'EE', 'DO', 'ZW', 'ZW']
+start_date = datetime.strptime('01/01/19','%m/%d/%y')
+for i,j in enumerate(shifts):
+        print(j+ ' ---> '+(start_date + timedelta(days=i)).strftime('%m/%d/%Y'))
+           
