@@ -1,0 +1,13 @@
+## Unpack from parameter ##
+
+def display(*a):
+    print('Hi', a[0][0],a[0][1])
+display([4,5])
+Hi 4 5
+
+##Unpack from argument##
+
+def display(a, b):
+    print('Hi', a, b)
+display(*[4,5])
+Hi 4 5
