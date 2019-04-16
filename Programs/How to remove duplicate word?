@@ -1,0 +1,4 @@
+st = 'Hi hello people people hello people'
+word = st.split()
+rew = sorted([word.index(i) for i in set(word)])
+print(*[word[x] for x in rew])
