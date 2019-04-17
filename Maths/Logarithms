@@ -33,3 +33,12 @@ This is called a "natural logarithm". Mathematicians use this one a lot.
 It is how many times "e"s need to be multiplied, to get our desired number.
 Example: ln(7.389) = loge(7.389) ≈ 2
 Because 2.71828**2 ≈ 7.389
+
+Example:
+np.exp([3])
+Out:
+array([20.08553692])
+
+2.7182818**3
+Out:
+20.085536292331234
