@@ -1,0 +1,2 @@
+How hash table retrive vlaue from Array?
+Index Number = Sum of ASCII code % Size of array
