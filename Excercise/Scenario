@@ -12,3 +12,6 @@ Let us assume the following comma separated input sequence is given to the progr
 
 The output of the program should be:
 18,22,24
+
+3. How can I detect file change in python?
+PS. there will be many file(20 - 30) and they can exceed 1000lines and performance is a concern?
