@@ -6,14 +6,10 @@ for _ in range(5):
     gender = input('Enter Male or Female:')
     poll = input('Enter Your Poll Y[es] or N[o]:')
 
-    if gender in ['m', 'M', 'Male'] and poll in ['y', 'Y', 'Yes']:
-        yes_male += 1
-    elif gender in ['m', 'M', 'Male'] and poll in ['n', 'N', 'No']: 
-        no_male += 1
-    elif gender in ['f', 'F', 'Female'] and poll in ['y', 'Y', 'Yes']:
-        yes_female += 1
-    elif gender in ['f', 'F', 'Female'] and poll in ['n', 'N', 'No']:   
-        no_female += 1
+    if gender in ['m', 'M', 'Male'] and poll in ['y', 'Y', 'Yes']: yes_male += 1
+    elif gender in ['m', 'M', 'Male'] and poll in ['n', 'N', 'No']: no_male += 1
+    elif gender in ['f', 'F', 'Female'] and poll in ['y', 'Y', 'Yes']: yes_female += 1
+    elif gender in ['f', 'F', 'Female'] and poll in ['n', 'N', 'No']: no_female += 1
 else:
     print('People Answered Yes:', yes_male + yes_female)
     print('People Answered No:', no_male + no_female)
