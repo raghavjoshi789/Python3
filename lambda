@@ -15,3 +15,7 @@ Out:
 
 Out:
 ['AAA', 'BBB', 'CCC', 'DDD', 'EEE']
+
+Example: 3
+add = lambda x, y: x+y
+add(5, 5)
