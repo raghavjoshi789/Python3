@@ -1,0 +1,4 @@
+from pathlib import Path
+
+p = Path('/home/mana/Work/sample.csv').read_text().replace(',','')
+print(p, file=open('/home/mana/Work/sample.txt','w'))
