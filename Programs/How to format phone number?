@@ -1,0 +1,4 @@
+import random 
+ph = ''.join([str(random.randint(1,9)) for _ in range(11)])
+print('PHONE NUMBER:',ph)
+'+91 {} {}'.format(ph[0:5],ph[6:])
