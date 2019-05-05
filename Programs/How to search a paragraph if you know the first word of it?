@@ -1,0 +1,5 @@
+from pathlib import Path
+
+inp = input('Enter Text: ').swapcase()
+p = Path('/home/mana/Work/para.txt').read_text().splitlines()
+[i for i in p if i.swapcase().startswith(inp)]
