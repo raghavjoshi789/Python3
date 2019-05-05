@@ -1,0 +1,3 @@
+lst =[{"address_id":2,"fullname":"Elvi ","email":"elvi@gmail.com"}]
+for i in lst:
+    print(i['fullname'])
