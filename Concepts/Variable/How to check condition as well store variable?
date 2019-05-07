@@ -1,0 +1,8 @@
+city = input("Please enter your city: ")
+age = int(input("Please enter your age: "))
+city1 = 'Chennai'
+city2 = 'Madurai'
+min_age = 21
+
+its_okay = city == city1 or city2 and age >= min_age
+its_okay
