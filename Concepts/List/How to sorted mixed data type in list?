@@ -1,0 +1,5 @@
+str_num = [5, "1", 100, 2.3, "34"]
+s1 = [i for i in str_num if isinstance(i,int) or isinstance(i,float)]
+s2 = [j for j in str_num if isinstance(j,str)]
+str_num = sorted(s1) + sorted(s2)
+str_num
