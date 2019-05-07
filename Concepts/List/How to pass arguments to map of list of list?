@@ -1,0 +1,4 @@
+list_of_lists = [[1,5534,123,67,8673,243] , [56,2,123,7,3], [546,24,5,7,86,45234,24 ]]
+sums = map(sum, list_of_lists)
+sum_of_sums = sum(sums)
+sum_of_sums
