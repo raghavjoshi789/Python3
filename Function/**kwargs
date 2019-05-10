@@ -1,0 +1,16 @@
+my_dict = {'fruit': 'apple', 'play': 'ball'}
+
+def fn(**kwargs):
+    for i in kwargs:
+        print('key:',i)
+        print('Value:',kwargs[i])
+    
+      
+fn(**my_dict)
+
+
+Output:
+key: fruit
+Value: apple
+key: play
+Value: ball
