@@ -9,9 +9,7 @@ $ ### OKAY. THANKS ###
 $ ### please show my main file ###
 $ cat hello.py 
 print(__name__)
-def main():
-   hello()
-    
+
 if __name__ == "__main__":
     main
 $ 
