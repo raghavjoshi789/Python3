@@ -1,0 +1,13 @@
+from pathlib import Path
+import random
+import re
+
+m = random
+r = str(m).rsplit('from')[-1]
+f = re.sub(r">|\'| ","",r)
+p= Path(f).read_text().splitlines()
+fn = [i for i in p 
+ if re.search(r"^def [a-zA-Z].*|class.*:$|^\s{1,}def [a-zA-Z].*",i)]
+for x in fn:
+    print(re.sub(r'def|:','',x))
+    
