@@ -1,0 +1,6 @@
+### Method: 1 ###
+from pathlib import Path as P
+max(P('/home/mana/Work/fruits.txt').read_text().splitlines(),key=len)
+
+### Method: 2 ###
+max(open('/home/mana/Work/fruits.txt'), key=len)   ## This is not safest method
