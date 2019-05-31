@@ -1,0 +1,14 @@
+*
+* *
+* * *
+*****
+******
+
+p = '*'
+
+for i in range(6):
+    if i <=3:
+        print(*p*i, sep=' ')
+    else:
+        print(p*(i+1))
+        
