@@ -1,0 +1,6 @@
+from datetime import datetime as da
+import re
+
+uni = str(da.now())
+h,m = re.sub(r'-|:|\.','',uni).split()
+(h+m)[-9:]
