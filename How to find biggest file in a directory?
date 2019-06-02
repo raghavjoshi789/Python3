@@ -1,4 +1,0 @@
-from pathlib import Path
-
-p = Path('/home/mana/Must Study/Python')
-print(sorted(p.rglob('*'), key=lambda x: x.stat().st_size)[-1])
