@@ -14,3 +14,14 @@ for i,j in lst:
     print(' '*i+'*'*j)
 for i,j in lst[-2::-1]:
     print(' '*i+'*'*j)
+    
+Method: 3
+import numpy as np
+
+x = np.arange(7,11)
+y = np.arange(1,9,2)
+z = np.column_stack((x[::-1],y))
+for i,j in z:
+    print(' '*i+'*'*j)
+for i,j in z[-2::-1]:
+    print(' '*i+'*'*j)
