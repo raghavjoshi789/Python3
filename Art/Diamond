@@ -1,4 +1,11 @@
+Method: 1
 lst1 = [(10,1),(9,3),(8,5),(7,7)]
 lst2 = lst1[-2::-1]
 for i,j in lst1+lst2:
     print(' '*i+'*'*j)
+
+
+Method: 2
+for i in range(-5,6):
+    print(abs(i)*' '+'*'*abs(abs(i)-6)+'*'*abs(abs(i)-5))
+
