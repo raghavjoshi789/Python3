@@ -1,27 +1,4 @@
-Method: 1
-
-lst = [(10,1),(9,3),(8,5),(7,7)]
-for i,j in lst:
-    print(' '*i+'*'*j)
-for i,j in lst[-2::-1]:
-    print(' '*i+'*'*j)
-    
-Method: 2
-a = [i for i in range(7,11)]
-b = [j for j in range(1,8,2)]
-lst = list(zip(a[::-1],b))
-for i,j in lst:
-    print(' '*i+'*'*j)
-for i,j in lst[-2::-1]:
-    print(' '*i+'*'*j)
-    
-Method: 3
-import numpy as np
-
-x = np.arange(7,11)
-y = np.arange(1,9,2)
-z = np.column_stack((x[::-1],y))
-for i,j in z:
-    print(' '*i+'*'*j)
-for i,j in z[-2::-1]:
+lst1 = [(10,1),(9,3),(8,5),(7,7)]
+lst2 = lst1[-2::-1]
+for i,j in lst1+lst2:
     print(' '*i+'*'*j)
