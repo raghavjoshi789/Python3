@@ -1,0 +1,13 @@
+def iCon():
+try:
+from urllib.request import urlopen
+except:
+print("pip install urllib")
+else:
+try:
+x=urlopen("https://google.com",timeout=5)
+except:
+print("No internet")
+else:
+doOtherFunctions()
+thatNeedInternet()
