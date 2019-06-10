@@ -1,0 +1,8 @@
+from pathlib import Path as Pa
+import re
+
+f = ['title.txt', 'f1.conf','f2.conf']
+for i in f:
+    result = Pa('/home/mana/Work/'+i).read_text().splitlines() 
+    SP1=[re.sub(r'^#.*|name|server{1}|\s','',x) for x in result if not x.startswith('#')]
+    print(*SP1,sep = ',',file=open('/home/mana/Work/server.csv','a+'))
