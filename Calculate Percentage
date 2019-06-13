@@ -1,3 +1,0 @@
-
-mymarks, totalmarks = 401, 500
-print('{:.0%}'.format(mymarks/totalmarks))
