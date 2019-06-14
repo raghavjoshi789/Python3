@@ -1,0 +1,19 @@
+import csv 
+import re
+
+files = ['title.txt','f1.conf','f2.conf']
+def csv_convert(*args):
+    for f in args:
+        d1 = []
+        with open('/home/mana/Work/'+f,'r') as f1,open('/home/mana/Work/test.csv', 'a+') as cf1:
+            for i in f1.readlines():
+                c = re.sub(r'^#.*|name|server{1}|\s','',i)
+                d1.append(c)
+            else:
+                j = ','.join(d1)
+                k = re.sub(r',,','',j)
+                writer = csv.writer(cf1, delimiter=' ')
+                writer.writerow([k])
+
+
+csv_convert(*files)
